@@ -1,3 +1,3 @@
 # FastRobots yooo
-yoo
-theme: jekyll-theme-minimal
+#yoo
+#theme: jekyll-theme-minimal

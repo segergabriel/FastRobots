@@ -1,3 +1,3 @@
 # Gabriel Seger Fast Robots 
 
-#Lab 1
+Lab 1

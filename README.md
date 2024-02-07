@@ -3,7 +3,6 @@
 
 ### Part 1) Objective
 The objective of this section of the lab is to familiarize myself with the Arduino IDE and the Artemis board. After Completing this lab, I will be able to program the board, utilizing the board LED, managing serial communications over USB, and operating the onboard temperature sensor and Pulse Density Microphone.
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
 #### Prelab
 I Installed the Arduino IDE on my computer and made sure that I had the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. 
@@ -31,17 +30,20 @@ src="https://www.youtube.com/embed/YdRLgCws2fE">
 
 
 ### Part 2) Objective
-The objective of this lab was to establish a bluetooth connection between the Artemis board and a computer. This lab involved connecting Python code to the Artemis using Arduino programming. This will then be used to send data via Bluetooth to use in future labs.
+The objective of this laboratory was to establish a Bluetooth link between the Artemis board and a computer. The task involved integrating Python code with the Artemis board through Arduino programming. The purpose of this setup was to facilitate the transmission of data via Bluetooth, which will be utilized in upcoming lab exercises.
 
 #### Prelab
-The bluetooth software used in this course was not compatible with Windows 11. Becuase of this, the setup involved loading Debian using WSL, Windows Subsystem for Linux. This was loaded onto the Windows 11 laptop, and Python using Jupyter Notebook was loaded through the WSL. Using this system, the Artemis board was able to connect to the Python code.
-talk about macos here and installations
+The bluetooth software used in this course was compatible with my mac. So, it was easy to set up a virtual environment. I installed Python and Jupyter Notebook within this environment, enabling the Artemis board to connect seamlessly to the Python code on my Mac.
 
 #### Configurations
-Once Debian was loaded onto the laptop, the next step was to connect the Artemis Board to the Python code. The first step in this process was to change the MAC address of the Artemis from the default in the code to the one used in the lab. By uploading the given ble_arduino.ino code file to the Artemis, the MAC address reads c0:07:1c:96:23:44, shown in the figure below.
+Next, I connected the Artemis Board to the Python code. This was achieved by uploading the provided ble_arduino.ino file to the Artemis, which resulted in the MAC address being updated to c0:89:25:6d:b0:4b, as depicted in the figure below.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
-pic od advertesing
-The MAC address was also changed in the Python code in the connection.yaml file shown below. This allows the Python code to read the device via bluetooth and connect to the Artemis. The second step needed to connect the device was to use a unique UUID address. Many of the Artemis boards in the course share the same MAC address, meaning the Python code might connect to different boards. Because of this, a UUID was needed to create a unique connection to the Artmeis board. This was generated in Python and then put in the "ble_service" line in connection.yaml, as well as the "BLE_UUID_TEST_SERVICE" in the Arduino code.
+
+
+I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was crucial for enabling the Python code to detect and establish a Bluetooth connection with the Artemis. The second critical step for a successful connection involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. To circumvent this, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code, ensuring a distinct and secure connection to my Artemis board.
+
+
 pic of jupyter adresses
 pic of artemis adress
 

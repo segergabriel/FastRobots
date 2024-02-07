@@ -5,6 +5,7 @@
 The purpose of this part of the lab is for you to setup and become familiar with the Arduino IDE and the Artemis board. After this lab, you should be comfortable programming your board, using the board LED, reading/writing serial messages over USB, and using the onboard temperature sensor and Pulse Density Microphone.
 rewrite
 
+![alt text](Skärmavbild 2024-01-31 kl. 10.42.28.png")
 include picture of board
 
 #### Prelab

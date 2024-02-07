@@ -6,7 +6,7 @@ The objective of this section of the lab is to familiarize myself with the Ardui
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
 #### Prelab
-I Installed the Arduino IDE on my computer and made sure I had the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. 
+I Installed the Arduino IDE on my computer and made sure that I had the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. 
 
 #### Blink it up
 To evaluate the functionality of the LED on the Artemis Board, the "Blink it Up" sample code was employed. This script was designed to activate the LED for a predetermined duration, followed by a phase where the LED is deactivated for another set period. As demonstrated in the accompanying video, this resulted in the LED being illuminated for 2 seconds and then extinguished for 1 second.
@@ -17,16 +17,20 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 #### Serial Example
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the photograph provided below.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png)
-https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 #### Analogread Example
-The third test involved using the temperature sensor. The temperature was sent to the serial monitor in 10^-3 degrees Celsius. To validicize the sensor, I covered the Atermis board with my hand, and the temperature increased slightly from 32.9 Celsius to 33.1 Celsius.
-pic of an read
-"EXAMPLE1_MICROPHONEOUTPUT"
+In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy of the sensor, I placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 32.9 degrees Celsius to 33.1 degrees Celsius.
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true)
+
+
+##### Microphone Output Example
 This test involed using the microphone to find the loudest frequency. This is shown in the video below.
 pic of mic
+video
+
+
 
 #### Part 2) Objective
 The objective of this lab was to establish a bluetooth connection between the Artemis board and a computer. This lab involved connecting Python code to the Artemis using Arduino programming. This will then be used to send data via Bluetooth to use in future labs.

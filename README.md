@@ -2,16 +2,11 @@
 ## Lab 1: The Artemis and Bluetooth
 
 #### Part 1) Objective
-The purpose of this part of the lab is for you to setup and become familiar with the Arduino IDE and the Artemis board. After this lab, you should be comfortable programming your board, using the board LED, reading/writing serial messages over USB, and using the onboard temperature sensor and Pulse Density Microphone.
-rewrite
-
+The objective of this section of the lab is to familiarize myself with the Arduino IDE and the Artemis board. After Completing this lab, I will be able to program the board, utilizing the board LED, managing serial communications over USB, and operating the onboard temperature sensor and Pulse Density Microphone.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
-
-include picture of board
-
 #### Prelab
-Install the Arduino IDE on your computer. Please use the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. Update them if necessary. If you have any issues, please contact the TA team. While we only guarantee TA support on the lab computers this semester, you can likely do all Arduino-related tasks on your own computer which will save everyone time!
+I Installed the Arduino IDE on my computer and made sure I had the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. 
 
 #### Blink it up
 To evaluate the functionality of the LED on the Artemis Board, the "Blink it Up" sample code was employed. This script was designed to activate the LED for a predetermined duration, followed by a phase where the LED is deactivated for another set period. As demonstrated in the accompanying video, this resulted in the LED being illuminated for 2 seconds and then extinguished for 1 second.
@@ -19,13 +14,10 @@ To evaluate the functionality of the LED on the Artemis Board, the "Blink it Up"
 src="https://www.youtube.com/embed/J3cUdux_d7M">
 </iframe>
 
-
-
-
 #### Serial Example
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the photograph provided below.
 
-pic of serial
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png)
 
 
 #### Analogread Example

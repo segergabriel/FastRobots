@@ -7,7 +7,7 @@ rewrite
 
 ![alt text](Skärmavbild 2024-01-31 kl. 10.42.28.png")
 https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild%202024-01-31%20kl.%2010.42.28.png
-![alt text](https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild%202024-01-31%20kl.%2010.42.28.png)
+![alt text](https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild 2024-01-31 kl. 10.42.28.png)
 include picture of board
 ![alt text][logo]
 [logo]: https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild%202024-01-31%20kl.%2010.42.28.png

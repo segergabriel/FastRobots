@@ -1,4 +1,5 @@
-# Lab 1: The Artemis and Bluetooth
+# ECE4160 Fast Robots
+## Lab 1: The Artemis and Bluetooth
 
 #### Part 1) Objective
 The purpose of this part of the lab is for you to setup and become familiar with the Arduino IDE and the Artemis board. After this lab, you should be comfortable programming your board, using the board LED, reading/writing serial messages over USB, and using the onboard temperature sensor and Pulse Density Microphone.

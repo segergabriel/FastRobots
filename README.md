@@ -18,7 +18,8 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the photograph provided below.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png)
-
+https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 #### Analogread Example
 The third test involved using the temperature sensor. The temperature was sent to the serial monitor in 10^-3 degrees Celsius. To validicize the sensor, I covered the Atermis board with my hand, and the temperature increased slightly from 32.9 Celsius to 33.1 Celsius.

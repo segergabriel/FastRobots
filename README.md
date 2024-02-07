@@ -44,8 +44,8 @@ Next, I connected the Artemis Board to the Python code. This was achieved by upl
 I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was crucial for enabling the Python code to detect and establish a Bluetooth connection with the Artemis. The second critical step for a successful connection involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. To circumvent this, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code, ensuring a distinct and secure connection to my Artemis board.
 
 
-pic of jupyter adresses
-pic of artemis adress
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
 
 #### ECHO COMMAND
 In order to test the connection between the Artemis board on the computer, multiple commands were made. The first was the ECHO command. This command sent a character string to the Artemis from the Python code, which then sent the phrase back to the Python code. This command was added to the Arduino code in ble_arduino.ide. Here, echo was added to the list of command types:

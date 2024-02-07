@@ -47,10 +47,10 @@ I also modified the MAC address in the Python script within the connection.yaml 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
 
-#### ECHO COMMAND
-In order to test the connection between the Artemis board on the computer, multiple commands were made. The first was the ECHO command. This command sent a character string to the Artemis from the Python code, which then sent the phrase back to the Python code. This command was added to the Arduino code in ble_arduino.ide. Here, echo was added to the list of command types:
-
-pic of ble enum and code for echo
+#### Echo
+To verify the connection between the Artemis board and the computer, I executed several commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below
+pic of  code for echo
+The following command is used in Python:
 pic of jupyter code
 
 #### GET_TIME_MILLIS

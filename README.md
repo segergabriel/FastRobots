@@ -6,11 +6,11 @@ The purpose of this part of the lab is for you to setup and become familiar with
 rewrite
 
 ![alt text](Skärmavbild 2024-01-31 kl. 10.42.28.png")
-https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild%202024-01-31%20kl.%2010.42.28.png
+https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild 2024-01-31 kl. 10.42.28.png
 ![alt text](https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild 2024-01-31 kl. 10.42.28.png)
 include picture of board
 ![alt text][logo]
-[logo]: https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild%202024-01-31%20kl.%2010.42.28.png
+[logo]: https://github.com/segergabriel/FastRobots/blob/main/images/Skärmavbild 2024-01-31 kl. 10.42.28.png
 #### Prelab
 Install the Arduino IDE on your computer. Please use the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. Update them if necessary. If you have any issues, please contact the TA team. While we only guarantee TA support on the lab computers this semester, you can likely do all Arduino-related tasks on your own computer which will save everyone time!
 

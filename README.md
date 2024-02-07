@@ -1,7 +1,7 @@
 # ECE4160 Fast Robots
 ## Lab 1: The Artemis and Bluetooth
 
-#### Part 1) Objective
+### Part 1) Objective
 The objective of this section of the lab is to familiarize myself with the Arduino IDE and the Artemis board. After Completing this lab, I will be able to program the board, utilizing the board LED, managing serial communications over USB, and operating the onboard temperature sensor and Pulse Density Microphone.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
@@ -16,23 +16,21 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 
 #### Serial Example
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the photograph provided below.
-
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 #### Analogread Example
-In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy of the sensor, I placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 32.9 degrees Celsius to 33.1 degrees Celsius.
+In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy, I quickly placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 31.95 to 31.99 degrees Celsius.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true)
 
-
 ##### Microphone Output Example
-This test involed using the microphone to find the loudest frequency. This is shown in the video below.
-pic of mic
-video
+In this example, we wanted ot find the loudest frequency using the microphone. The video below show the results. 
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/YdRLgCws2fE">
+</iframe>
 
 
-
-#### Part 2) Objective
+### Part 2) Objective
 The objective of this lab was to establish a bluetooth connection between the Artemis board and a computer. This lab involved connecting Python code to the Artemis using Arduino programming. This will then be used to send data via Bluetooth to use in future labs.
 
 #### Prelab

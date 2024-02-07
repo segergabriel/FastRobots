@@ -13,27 +13,22 @@ include picture of board
 #### Prelab
 Install the Arduino IDE on your computer. Please use the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. Update them if necessary. If you have any issues, please contact the TA team. While we only guarantee TA support on the lab computers this semester, you can likely do all Arduino-related tasks on your own computer which will save everyone time!
 
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/shorts/J3cUdux_d7M">
-</iframe>
+#### Blink it up
+To evaluate the functionality of the LED on the Artemis Board, the "Blink it Up" sample code was employed. This script was designed to activate the LED for a predetermined duration, followed by a phase where the LED is deactivated for another set period. As demonstrated in the accompanying video, this resulted in the LED being illuminated for 2 seconds and then extinguished for 1 second.
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/J3cUdux_d7M">
 </iframe>
-https://youtube.com/shorts/J3cUdux_d7M
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/[shorts/J3cUdux_d7M]"></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/[https://youtube.com/shorts/J3cUdux_d7M]"></iframe>
-shorts/J3cUdux_d7M
-https://youtube.com/shorts/J3cUdux_d7M?feature=share
 
-EXAMPLE: BLINK IT UP
-To test the LED on the Artemis Board, the "Blink it Up" example was used. This code turned the LED on for an specified time, then turned the LED off for a specified time. In the example video below, the LED was on for 2 seconds, then off for 1 second.
-Video blinking
-"EXAMPLE2_SERIAL"
-In the second example, the objective was to test the serial monitor output. In this example, the Arduino sent a counting test to the serial monitor. It then allowed the user to type an input into the serial monitor, and the Artemis Board would read this and output the input into the serial monitor. This can be seen in the photo below.
+
+#### Serial Example
+For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the photograph provided below.
+
 pic of serial
-"EXAMPLE4_ANALOGREAD"
+
+
+#### Analogread Example
 The third test involved using the temperature sensor. The temperature was sent to the serial monitor in 10^-3 degrees Celsius. To validicize the sensor, I covered the Atermis board with my hand, and the temperature increased slightly from 32.9 Celsius to 33.1 Celsius.
 pic of an read
 "EXAMPLE1_MICROPHONEOUTPUT"

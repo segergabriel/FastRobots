@@ -16,6 +16,11 @@ Install the Arduino IDE on your computer. Please use the latest versions of Ardu
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/shorts/J3cUdux_d7M">
 </iframe>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/J3cUdux_d7M">
+</iframe>
+https://youtube.com/shorts/J3cUdux_d7M
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/[shorts/J3cUdux_d7M]"></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/[https://youtube.com/shorts/J3cUdux_d7M]"></iframe>

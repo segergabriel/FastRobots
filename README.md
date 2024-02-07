@@ -39,10 +39,7 @@ The bluetooth software used in this course was compatible with my mac. So, it wa
 Next, I connected the Artemis Board to the Python code. This was achieved by uploading the provided ble_arduino.ino file to the Artemis, which resulted in the MAC address being updated to c0:89:25:6d:b0:4b, as depicted in the figure below.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true)
 
-
-
 I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was crucial for enabling the Python code to detect and establish a Bluetooth connection with the Artemis. The second critical step for a successful connection involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. To circumvent this, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code, ensuring a distinct and secure connection to my Artemis board.
-
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
@@ -55,16 +52,17 @@ The following command is used in Python:
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
 #### GET_TIME_MILLIS
-The next command involved receiving the current time from the Artemis board. This meant using the millis() function in the Arduino package, then converting this value to a double, and sending it as a string to Python. The Arduino code is shown here:
+The subsequent command focused on obtaining the current time from the Artemis board. This required utilizing the millis() function from the Arduino library. The value obtained from millis() was then converted into a double data type, and subsequently formatted into a string. This string representation of the current time was then transmitted to the Python script. The relevant segment of the Arduino code is as follows:
 
-pic of jupyter and get milli case
+pic of get milli case
+pic of jupyter command and output
 
-### NOTIFICATION HANDLER
-In order to be able to gather data without manually calling the data, a notification handler was developed to automatically recieve the data in Python. The message array will be useful for future use of the function as we will be able to receive multiple string arrays without calling it manually. This code is shown below:
+#### NOTIFICATION HANDLER
+To facilitate automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the Artemis board. The incorporation of a message array in this setup is particularly beneficial for future applications, as it allows for the reception of multiple string arrays autonomously, without manual intervention. The Python implementation details are provided below:
 
 pic of jupyter code
 
-### get the current time in milliseconds 
+#### get the current time in milliseconds 
 and sends it to your laptop to be received and processed by the notification handler. Collect these values for a few seconds and use the time stamps to determine how fast messages can be sent. What is the effective data transfer rate of this method?
 asnwer the questions 
 pic of jupyter and arduino 

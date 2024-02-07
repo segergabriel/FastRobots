@@ -4,10 +4,11 @@
 #### Part 1) Objective
 The purpose of this part of the lab is for you to setup and become familiar with the Arduino IDE and the Artemis board. After this lab, you should be comfortable programming your board, using the board LED, reading/writing serial messages over USB, and using the onboard temperature sensor and Pulse Density Microphone.
 rewrite
-
-
+https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
 ![alt text](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
+![Octocat](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 ![Octocat](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
 ![Branching](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
 include picture of board

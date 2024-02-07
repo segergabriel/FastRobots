@@ -37,7 +37,7 @@ The bluetooth software used in this course was compatible with my mac. So, it wa
 
 #### Configurations
 Next, I connected the Artemis Board to the Python code. This was achieved by uploading the provided ble_arduino.ino file to the Artemis, which resulted in the MAC address being updated to c0:89:25:6d:b0:4b, as depicted in the figure below.
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true)
 
 
 
@@ -49,9 +49,10 @@ I also modified the MAC address in the Python script within the connection.yaml 
 
 #### Echo
 To verify the connection between the Artemis board and the computer, I executed several commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below
-pic of  code for echo
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true)
 The following command is used in Python:
-pic of jupyter code
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echojup.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
 #### GET_TIME_MILLIS
 The next command involved receiving the current time from the Artemis board. This meant using the millis() function in the Arduino package, then converting this value to a double, and sending it as a string to Python. The Arduino code is shown here:

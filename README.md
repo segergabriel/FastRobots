@@ -6,9 +6,10 @@ The purpose of this part of the lab is for you to setup and become familiar with
 rewrite
 
 
-
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
 ![alt text](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
-
+![Octocat](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
+![Branching](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png)
 include picture of board
 
 #### Prelab

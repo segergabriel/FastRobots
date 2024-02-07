@@ -13,9 +13,9 @@ include picture of board
 #### Prelab
 Install the Arduino IDE on your computer. Please use the latest versions of ArduinoIDE and Sparkfun Appollo3 support software. Update them if necessary. If you have any issues, please contact the TA team. While we only guarantee TA support on the lab computers this semester, you can likely do all Arduino-related tasks on your own computer which will save everyone time!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/[shorts/J3cUdux_d7M?feature=share]"></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/[https://youtube.com/shorts/J3cUdux_d7M?feature=share]"></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/[shorts/J3cUdux_d7M]"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/[https://youtube.com/shorts/J3cUdux_d7M]"></iframe>
+shorts/J3cUdux_d7M
 https://youtube.com/shorts/J3cUdux_d7M?feature=share
 
 EXAMPLE: BLINK IT UP

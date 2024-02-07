@@ -2,5 +2,5 @@ remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
-title: [The title of your site]
-description: [A short description of your site's purpose]
+title: ECE4160 Fast Robots
+description: Welcome to my Fast Robots webpage. This page will contain all the labs that I will complete for this course. I am an electrical engineering student interested in robotics. I like playing ice hockey and golf.

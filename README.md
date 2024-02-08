@@ -54,8 +54,9 @@ The following command is used in Python:
 #### GET_TIME_MILLIS
 The subsequent command focused on obtaining the current time from the Artemis board. This required utilizing the millis() function from the Arduino library. The value obtained from millis() was then converted into a double data type, and subsequently formatted into a string. This string representation of the current time was then transmitted to the Python script. The relevant segment of the Arduino code is as follows:
 
-pic of get milli case
-pic of jupyter command and output
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisarduino.png?raw=true)
+And below is the command in Python.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true)
 
 #### NOTIFICATION HANDLER
 To facilitate automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the Artemis board. The incorporation of a message array in this setup is particularly beneficial for future applications, as it allows for the reception of multiple string arrays autonomously, without manual intervention. The Python implementation details are provided below:

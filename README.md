@@ -65,11 +65,16 @@ To facilitate automatic data acquisition without the need for manual requests, a
 
 
 #### Current time in milliseconds 
-To efficiently collect and transmit timestamp data from the Artemis board to a computer,a global array was implemented. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for subsequent processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead and managing memory use effectively on the Artemis board.
+I created a loop on the Artemis board to capture the current time in milliseconds at regular intervals and send these timestamps to my laptop. The laptop processed the incoming data. By collecting  the timestamps for a set duration, the effective data transfer rate was determined.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true)
 
-pic of jupyter and arduino 
+#### Send Time
+To efficiently collect and transmit timestamp data from the Artemis board to a computer,a global array was implemented. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for subsequent processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead and managing memory use effectively on the Artemis board. Below is the use code.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
-### SEND_TIME_DATA
 store time stamps. Now create an array that can store time stamps. This array should be defined globally so that other functions can access it if need be. In the loop, rather than send each time stamp, place each time stamp into the array. (Note: you’ll need some extra logic to determine when your array is full so you don’t “over fill” the array.) Then add a command SEND_TIME_DATA which loops the array and sends each data point as a string to your laptop to be processed. (You can store these values in a list in python to determine if all the data was sent over.)
 
 pic of jupyter and arduino 

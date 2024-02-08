@@ -58,7 +58,7 @@ The subsequent command focused on obtaining the current time from the Artemis bo
 And below is the command in Python.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true)
 
-#### NOTIFICATION HANDLER
+#### Notification Handler
 To facilitate automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the Artemis board. The incorporation of a message array in this setup is particularly beneficial for future applications, as it allows for the reception of multiple string arrays autonomously, without manual intervention. The Python implementation details are provided below:
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true)
 
@@ -73,15 +73,18 @@ To efficiently collect and transmit timestamp data from the Artemis board to a c
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
-#### GET_TEMP_READINGS
+#### Get Temperature
 For this task, an additional array was configured with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
 
-### LIMITATIONS
-The Artemis Board has a maximum storage of 384 kB of RAM. If we were to sample 16-bit values at 150 Hz every 5 seconds, we would be able to create 256 values before the storage on the Artemis board would run out. This means that we will need to send data in groups to Python in order to optimize the speed of data acquisition from the Artemis board.
-rewrite
+#### Discussion
+The two methods handle data collection and transmission in different ways. The first method captures the current time at set intervals and immediately sending this information. This approach is advantageous for real-time monitoring as it allows immediate action based on the received data. However, it can hinder the BLE connection due to the constant data flow and may lead to inefficiencies in bandwidth usage due to the potential overhead of sending small packets of data frequently.
 
-### EFFECTIVE RATE AND OVERHEAD
-The data rate with 5-byte replies is 32.4 bytes/s, whereas with 120-byte replies, the data rate is 410 bytes/s. Through testing multiple byte replies in intervals of 10, it can be seen that the data rate increases with the amount of bytes sent through the graph below. This trend shows that the larger replies help reduce overhead. However, if the size is too large, the data rate will break the trend and decrease, as seen comparing byte replies with greater than 100 bytes.
+The second method stores temperature readings alongside timestamps in a second array, with data transmission initiated by a specific command. This method is more data-efficient, as it sends larger packets of information, reducing the relative overhead of BLE transmissions. The downside is the potential delay in data availability on the receiving end, and the increased use of memory for storing data before sending. This approach is better suited for scenarios where data can be reviewed rather than requiring immediate action.
+
+The speed is constrained by the rate at which the Artemis board can sample the temperature sensor and store the data. With 384 kB of RAM, the board can theoretically store a large volume of data points. If we consider each data point to comprise a timestamp and temperature reading, both stored as 32-bit values, each pair would occupy 8 bytes. Therefore, the board could store up to 48,000 such pairs before running out of memory. However, the actual amount of data that can be stored will be less. If we instead were to sample 16-bit values at 150 Hz every 5 seconds, we would be able to create 256 values before the storage on the Artemis board would run out.
+
+The data rate with 5-byte replies is 32.4 bytes/s, whereas with 120-byte replies, the data rate is 410 bytes/s.
+

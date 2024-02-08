@@ -65,8 +65,8 @@ To facilitate automatic data acquisition without the need for manual requests, a
 
 
 #### Current time in milliseconds 
-and sends it to your laptop to be received and processed by the notification handler. Collect these values for a few seconds and use the time stamps to determine how fast messages can be sent. What is the effective data transfer rate of this method?
-asnwer the questions 
+To efficiently collect and transmit timestamp data from the Artemis board to a computer,a global array was implemented. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for subsequent processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead and managing memory use effectively on the Artemis board.
+
 pic of jupyter and arduino 
 
 ### SEND_TIME_DATA

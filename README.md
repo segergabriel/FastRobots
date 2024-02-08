@@ -75,7 +75,9 @@ To efficiently collect and transmit timestamp data from the Artemis board to a c
 
 #### GET_TEMP_READINGS
 For this task, an additional array was configured with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
-
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
 
 ### LIMITATIONS
 The Artemis Board has a maximum storage of 384 kB of RAM. If we were to sample 16-bit values at 150 Hz every 5 seconds, we would be able to create 256 values before the storage on the Artemis board would run out. This means that we will need to send data in groups to Python in order to optimize the speed of data acquisition from the Artemis board.

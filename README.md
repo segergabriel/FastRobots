@@ -60,8 +60,6 @@ And below is the command in Python.
 
 #### NOTIFICATION HANDLER
 To facilitate automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the Artemis board. The incorporation of a message array in this setup is particularly beneficial for future applications, as it allows for the reception of multiple string arrays autonomously, without manual intervention. The Python implementation details are provided below:
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true)
 
 
 #### Current time in milliseconds 

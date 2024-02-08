@@ -60,7 +60,7 @@ And below is the command in Python.
 
 #### NOTIFICATION HANDLER
 To facilitate automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the Artemis board. The incorporation of a message array in this setup is particularly beneficial for future applications, as it allows for the reception of multiple string arrays autonomously, without manual intervention. The Python implementation details are provided below:
-
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true)
 
 #### Current time in milliseconds 
 I created a loop on the Artemis board to capture the current time in milliseconds at regular intervals and send these timestamps to my laptop. The laptop processed the incoming data. By collecting  the timestamps for a set duration, the effective data transfer rate was determined.
@@ -73,11 +73,8 @@ To efficiently collect and transmit timestamp data from the Artemis board to a c
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
-store time stamps. Now create an array that can store time stamps. This array should be defined globally so that other functions can access it if need be. In the loop, rather than send each time stamp, place each time stamp into the array. (Note: you’ll need some extra logic to determine when your array is full so you don’t “over fill” the array.) Then add a command SEND_TIME_DATA which loops the array and sends each data point as a string to your laptop to be processed. (You can store these values in a list in python to determine if all the data was sent over.)
-
-pic of jupyter and arduino 
-
-### GET_TEMP_READINGS
+#### GET_TEMP_READINGS
+For this task, an additional array was configured with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
 
 
 ### LIMITATIONS

@@ -88,3 +88,17 @@ The speed is constrained by the rate at which the Artemis board can sample the t
 
 The data rate with 5-byte replies is 32.4 bytes/s, whereas with 120-byte replies, the data rate is 410 bytes/s.
 
+## Lab 2: IMU
+
+### Objective
+
+### Prelab
+
+### Setup
+
+### Accelerometer
+
+### Gyroscope
+
+### Sample Data
+

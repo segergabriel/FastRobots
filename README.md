@@ -91,14 +91,58 @@ The data rate with 5-byte replies is 32.4 bytes/s, whereas with 120-byte replies
 ## Lab 2: IMU
 
 ### Objective
-
-### Prelab
+The goal of this lab is to configure and be able to use an IMU sensor on our robot. It involved configuring the IMU sensor and accurately capturing its data. 
 
 ### Setup
+The first thing we had to do was to connect the IMU to the artemis, this is shown below. 
+picture of board
+picture of output
+
+The software configuration for the IMU required the installation of the ICM_20948 library within the Arduino IDE, which allowed easy communication between the IMU on the Artemis platform. One important variable within the sample code is AD0_VAL, which represents the least significant bit of the IMU's I2C address. This value should be set to 0 only if the ADR jumper is open. Since the ADR jumper is closed for us, the AD0_VAL is set to 0. 
+
+pictuer of plotter
 
 ### Accelerometer
+When printing the output, the accelerometer data presents the acceleration measurements for each coordinate axis. The IMU's accelerometer captures these accelerations in micro-G units. To determine the angles relative to the x-axis (roll) and y-axis (pitch), the arctangent function is utilized. The mathematical expressions are shown below.
 
+formula
+Roll = atan2(a_x, a_z)
+Pitch = atan2(a_y, a_z)
+picture of code for acc
+
+Using these equations, the pitch and roll were found at each time step and plotted using the serial plotter, seen below. When rotating either pitch or roll to 90 degrees, the other becomes very noisy at 90 degrees. For example, the first rotation to -90 degrees was pitch, and once it hit 90, the roll angle became very noisy, when it should have stayed close to 0.
+
+Employing these equations, the values for pitch and roll were computed at each interval and graphically represented using the serial plotter. It was observed that upon rotating the pitch or roll to 90 degrees, the other one became noisy. For instance, during the initial rotation where the pitch approached 90 degrees, the roll measurement saw lots of noise and did not remain at 0.
+
+output of degrees
+accuray picture
+The accelerometer has high accuracy when coupled with a low pass filter, although it displays a slight deviation from the mean.
+acc roll pic
+
+Below is the collected data and FFT with no large noise source around.
+pic
+I believe this is due to the low magnitude of noise since the IMU already has a low pass filter according to its datasheet
+code of lowpass filt
 ### Gyroscope
+The gyroscope uses the change in angle around each axis with this equation.
+equation for gyro
+code for gyro
+In order to decrease the noise from the accelerometer data, the gyroscope reading needed to be taken. From the graph below, the gyroscope data drifts as time increases, with the delay being 10s for this graph. 
+
+To minimize noise in the accelerometer data, it was necessary to incorporate gyroscope readings. However, As evident from the graph below, there is a noticeable drift in the gyroscope data over time, with the delay being set to 10 seconds.
+
+gyro angle pic
+
+### Complimentaray Filter
+To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.
+
+pic of comp code
+pic of outputs with comp filter
 
 ### Sample Data
+After eliminating all delay and print statements, and by storing time, accelerometer, and gyroscope data, the sampling rate became very fast. The average was around 4ms. This could result in an excessive volume of data collected in a brief duration. Such a large dataset could quickly consume the Artemis' storage capacity and make it challenging to analyze the robot's long-term behavior. To manage this, the data was stored into different string arrays before being trannsmitted to my laptop. Note that the IMU values are int16_t and 100 values for each array was enough. This was about 10000Kb and with the 384kB internal data, the artemis has plenty of memory for data collection. See my implementation below. 
+
+code of case w all
+ 
+In addition to the data management, the transfer process involved a combination of two files. I created a header file for the IMU sensor file and included that in the ble file, where I then ran my the program. 
 

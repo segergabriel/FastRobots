@@ -122,7 +122,7 @@ Employing these equations, the values for pitch and roll were computed at each i
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoflat.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoutflat.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true)
 
 The accelerometer has high accuracy when coupled with a low pass filter, although it displays a slight deviation from the mean. Below you can see expected versus actual values for pitch and roll.
@@ -136,7 +136,7 @@ Below is the collected data and FFT with no large noise source around.
 
 Below is the code that was used for the low-pass filter. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2lpf.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true)
 
 I believe this is due to the low magnitude of noise since the IMU already has a low pass filter according to its datasheet
 
@@ -151,12 +151,13 @@ And here you can see the code that was used.
 
 To minimize noise in the accelerometer data, it was necessary to incorporate gyroscope readings. However, As evident from the graph below, there is a noticeable drift in the gyroscope data over time, with the delay being set to 10 seconds.
 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyrodrift.png?raw=true)
+
+Here is the outputs from the serial plotter when it's held flat and when lifted. 
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroout2.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroplot.png?raw=true)
 
-Here is the outputs from the serial plotter when it's position is flat and 90 degrees. 
-
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroplot.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroflat.png?raw=true)
 
 ### Complimentaray Filter
 To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.

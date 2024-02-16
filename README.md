@@ -15,10 +15,12 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 
 #### Serial Example
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the image below.
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 #### Analogread Example
 In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy, I quickly placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 31.95 to 31.99 degrees Celsius.
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true)
 
 ##### Microphone Output Example
@@ -46,6 +48,7 @@ I also modified the MAC address in the Python script within the connection.yaml 
 To verify the connection between the Artemis board and the computer, I executed some commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true)
+
 The following command is used in Python:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echojup.png?raw=true)
@@ -80,6 +83,7 @@ To collect and transmit timestamp data from the Artemis board to my laptop, a gl
 
 #### Get Temperature
 For this task, an additional array was created with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
@@ -100,7 +104,8 @@ The goal of this lab is to configure and be able to use an IMU sensor on our rob
 
 ### Setup
 The first thing we had to do was to connect the IMU to the artemis, this is shown below. 
-picture of board
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2board.png?raw=true)
 
 The software configuration for the IMU required the installation of the ICM_20948 library within the Arduino IDE, which allowed easy communication between the IMU on the Artemis platform. One important variable within the sample code is AD0_VAL, which represents the least significant bit of the IMU's I2C address. This value should be set to 0 only if the ADR jumper is open. Since the ADR jumper is closed for us, the AD0_VAL is set to 0. 
 
@@ -163,5 +168,5 @@ After eliminating all delay and print statements, and by storing time, accelerom
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2sample.png?raw=true)
  
-In addition to the data management, the transfer process involved a combination of two files. I created a header file for the IMU sensor file and included that in the ble file, where I then ran my the program. 
+In addition to the data management, I had to combine two files in order to be able to transfer data. I created a header file for the IMU sensor file and included that in the ble file, where I then ran my the program. 
 

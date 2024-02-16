@@ -110,14 +110,15 @@ Roll = atan2(a_x, a_z)
 Pitch = atan2(a_y, a_z)
 picture of code for acc
 
-Using these equations, the pitch and roll were found at each time step and plotted using the serial plotter, seen below. When rotating either pitch or roll to 90 degrees, the other becomes very noisy at 90 degrees. For example, the first rotation to -90 degrees was pitch, and once it hit 90, the roll angle became very noisy, when it should have stayed close to 0.
-
 Employing these equations, the values for pitch and roll were computed at each interval and graphically represented using the serial plotter. It was observed that upon rotating the pitch or roll to 90 degrees, the other one became noisy. For instance, during the initial rotation where the pitch approached 90 degrees, the roll measurement saw lots of noise and did not remain at 0.
 
-output of degrees
-accuray picture
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accflat.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoflat.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoutflat.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true)
+
 The accelerometer has high accuracy when coupled with a low pass filter, although it displays a slight deviation from the mean.
-acc roll pic
+accuray picture
 
 Below is the collected data and FFT with no large noise source around.
 pic
@@ -127,11 +128,13 @@ code of lowpass filt
 The gyroscope uses the change in angle around each axis with this equation.
 equation for gyro
 code for gyro
-In order to decrease the noise from the accelerometer data, the gyroscope reading needed to be taken. From the graph below, the gyroscope data drifts as time increases, with the delay being 10s for this graph. 
 
 To minimize noise in the accelerometer data, it was necessary to incorporate gyroscope readings. However, As evident from the graph below, there is a noticeable drift in the gyroscope data over time, with the delay being set to 10 seconds.
+pic of accuracy
 
-gyro angle pic
+Here is the outputs from the serial plotter when it's position is flat and 90 degrees. 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroplot.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroflat.png?raw=true)
 
 ### Complimentaray Filter
 To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.

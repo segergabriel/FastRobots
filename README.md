@@ -1,4 +1,10 @@
 # ECE4160 Fast Robots
+
+## Resources
+
+* [Schedule](./Lab1.md)
+
+
 ## Lab 1: The Artemis and Bluetooth
 
 ### Part 1) Objective

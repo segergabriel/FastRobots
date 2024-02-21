@@ -3,9 +3,9 @@
 ## Laboratories
 
 * [Lab 1: The Artemis and Bluetooth](./Lab1.md)
-*  [Lab 2: IMU](./Lab1.md)
+* [Lab 2: IMU](./Lab2.md)
 * [Lab 3: Time-Of-Flight Sensor](./Lab3.md)
-* * [Lab 1: The Artemis and Bluetooth](./Lab3.md)
+
 
 
 ## Lab 1: The Artemis and Bluetooth
@@ -112,6 +112,7 @@ The data rate with 5-byte replies is 32.4 bytes/s, whereas with 120-byte replies
 The goal of this lab is to configure and be able to use an IMU sensor on our robot. It involved configuring the IMU sensor and accurately capturing its data. 
 
 ### Setup
+
 The first thing we had to do was to connect the IMU to the artemis, this is shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2board.png?raw=true)

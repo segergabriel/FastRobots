@@ -188,13 +188,14 @@ photo of breadboard
 
 First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different adresses, as noted in the prelab.
 
-
 ### I2C
+
 photo of connection to tof
 
 The SparkFun VL53L1X 4m laser distance sensor library was installed via the Arduino IDE. Then, the Apollo 3 -> Example05_Wire_I2C.ino was used as an example to learn the I2C library. The address that appears on the serial monitor is 0x29, which is different from the 0x52 address indicated in the datasheet. I believe this is due to the final bit of the address, which signifies read/write status, is not considered part of the address. Therefore, the address could be either 0x52 or 0x29.
 
 ### Distance Measurements
+
 task 6 and 7
 
 To verify reliability of the sensor, we need to test its measurement data. This was done by comparing actual versus collected data. The ToF sensor has two modes, short and long. Depending on the task, different distance modes can be set on the robot in order to maximize accuracy. For example, a task that involves avoiding many nearby obstacles would rely on the short distance mode. Because of this, a slower moving robot will benefit due to its effective range of up to 1.3 meters. However, we are building a fast robot, and therefore we will need the ability to detect obstacles at greater distances. While the long distance mode introduces more noise, it extends the range to approximately 4 meters, and the fast-moving robot will be able to react in time. 
@@ -207,10 +208,27 @@ photo of actual vs data
 
 ### 2 TOF sensors
 
+To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assignined distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to adress 0x29. After this, both sensors were able to function concurrently and effectively gather data.
+
+photo of both outputs and the code that was used
+
+
 ### Tof sensor speed
+The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. 
+
+photo of code when collecting data and the output
+
+Change this
+
+One can see that the loop duration is approximately 3ms when the sensors are inactive, but extends to around 12ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.
 
 ### Time versus Distance
 
+I modfied the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
 
+photo of code
 
+These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations which are displayed below. 
+
+Photo of graph
 

@@ -1,8 +1,11 @@
 # ECE4160 Fast Robots
 
-## Resources
+## Laboratories
 
 * [Lab 1: The Artemis and Bluetooth](./Lab1.md)
+*  [Lab 2: IMU](./Lab1.md)
+* [Lab 3: Time-Of-Flight Sensor](./Lab3.md)
+* * [Lab 1: The Artemis and Bluetooth](./Lab3.md)
 
 
 ## Lab 1: The Artemis and Bluetooth

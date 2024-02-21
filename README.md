@@ -208,15 +208,15 @@ I needed to evaluate the accuracy of the sensor at shorter distances, as those a
 
 To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assignined distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to adress 0x29. After this, both sensors were able to function concurrently and effectively gather data.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
-photo of both outputs and the code that was used
+
 
 
 ### Tof sensor speed
 The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. 
 
-photo of code when collecting data and the output
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
 Change this
 
@@ -226,7 +226,7 @@ One can see that the loop duration is approximately 3ms when the sensors are ina
 
 I modfied the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
 
-photo of code
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
 
 These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations which are displayed below. 
 

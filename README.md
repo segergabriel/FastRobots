@@ -184,7 +184,8 @@ First, when constructing the robot, we will use two VL53L1X Time-of-Flight senso
 The positioning of the ToF sensors is important and can influence different characteristics. . Given the robot's forward motion, I decided to position one ToF sensor at the front. Placement of the second sensor could vary, however. If I positioned it at the front too, it would provide better data for frontal obstacles but could limit spatial awareness. Installing a sensor at the back would improve navigational awareness when the robot rotates 180 degrees. However, to have quicker environmental perception without the need for the robot to rotate, I decided to place the second ToF sensor on one of the sides of the robot. This side placement will give the best opportunity for the robot to understand its surroundings as fast as possible in my opinion. 
 
 ### Connecting the first ToF sensor
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4board.png?raw=true)
 
 First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different addresses, as noted in the prelab.
 

@@ -190,9 +190,9 @@ First, I had to solder a connection between the ToF sensors and the Artemis boar
 
 ### I2C
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
+The SparkFun VL53L1X 4m laser distance sensor library was installed via the Arduino IDE. Then, the Apollo 3 -> Example05_Wire_I2C.ino was used as an example to learn the I2C library. The address that appears on the serial monitor is 0x29, which is different from the 0x52 address indicated in the datasheet. I believe this is due to the final bit of the address, which signifies read/write status, is not considered part of the address. Therefore, the address could be either 0x52 or 0x29. The connection is displayed below. 
 
-The SparkFun VL53L1X 4m laser distance sensor library was installed via the Arduino IDE. Then, the Apollo 3 -> Example05_Wire_I2C.ino was used as an example to learn the I2C library. The address that appears on the serial monitor is 0x29, which is different from the 0x52 address indicated in the datasheet. I believe this is due to the final bit of the address, which signifies read/write status, is not considered part of the address. Therefore, the address could be either 0x52 or 0x29.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
 
 ### Distance Measurements
 
@@ -206,15 +206,17 @@ I needed to evaluate the accuracy of the sensor at shorter distances, as those a
 
 ### 2 TOF sensors
 
-To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assigned distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to address 0x29. After this, both sensors were able to function concurrently and effectively gather data.
+To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assigned distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to address 0x29. After this, both sensors were able to function concurrently and effectively gather data. Below is my code to set the addresses. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
+
+The figure below displays the output for the two sensors in mm.
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
 
 
-
 ### Tof sensor speed
-The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. 
+The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. See the implementation and output below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
@@ -227,7 +229,7 @@ I modified  the code from the first lab to include the distance data, which is i
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
 
-These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations which are displayed below. 
+These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations wand is displayed below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true)
 

@@ -2,7 +2,7 @@
 
 ## Resources
 
-* [Schedule](./Lab1.md)
+* [Lab 1: The Artemis and Bluetooth](./Lab1.md)
 
 
 ## Lab 1: The Artemis and Bluetooth

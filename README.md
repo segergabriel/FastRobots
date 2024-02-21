@@ -190,26 +190,26 @@ First, I had to solder a connection between the ToF sensors and the Artemis boar
 
 ### I2C
 
-photo of connection to tof
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
 
 The SparkFun VL53L1X 4m laser distance sensor library was installed via the Arduino IDE. Then, the Apollo 3 -> Example05_Wire_I2C.ino was used as an example to learn the I2C library. The address that appears on the serial monitor is 0x29, which is different from the 0x52 address indicated in the datasheet. I believe this is due to the final bit of the address, which signifies read/write status, is not considered part of the address. Therefore, the address could be either 0x52 or 0x29.
 
 ### Distance Measurements
 
-task 6 and 7
-
 To verify reliability of the sensor, we need to test its measurement data. This was done by comparing actual versus collected data. The ToF sensor has two modes, short and long. Depending on the task, different distance modes can be set on the robot in order to maximize accuracy. For example, a task that involves avoiding many nearby obstacles would rely on the short distance mode. Because of this, a slower moving robot will benefit due to its effective range of up to 1.3 meters. However, we are building a fast robot, and therefore we will need the ability to detect obstacles at greater distances. While the long distance mode introduces more noise, it extends the range to approximately 4 meters, and the fast-moving robot will be able to react in time. 
+Below is the output for one sensor.
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true)
 
-I needed to evaluate the accuracy of the sensor at shorter distances, as those are not the ranges the mode is optimized for.  With the short mode, I collected various data points over distances by marking distances along a wall and moving the TOF sensor along it facing an object on the other end. I was therefore able to collect 100s?? of distance measurements from the TOF sensor using the bluetooth communication used in earlier labs. 
+I needed to evaluate the accuracy of the sensor at shorter distances, as those are not the ranges the mode is optimized for.  With the short mode, I collected various data points over distances by marking distances along a wall and moving the TOF sensor along it facing an object on the other end. The data points which are displayed in the graph below. The data is consistent and linear. The standard deviation bars, which I included in the graph, didn't showed up for shorter ranges. However, at longer distances the deviation bars became somewhat noticeable, suggesting a slight tendency of the ToF sensor to overshoot distances as the range increased.
 
-Ten ??data points from the sensor were taken at each point, which are displayed in the graph below. The data is consistent and linear. The standard deviation bars, which I included in the graph, didn't showed up for shorter ranges. However, at longer distances the deviation bars became somewhat noticeable, suggesting a slight tendency of the ToF sensor to overshoot distances as they increased.
-
-photo of actual vs data
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3graph2.png?raw=true)
 
 ### 2 TOF sensors
 
 To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assignined distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to adress 0x29. After this, both sensors were able to function concurrently and effectively gather data.
 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
 photo of both outputs and the code that was used
 
 
@@ -217,7 +217,7 @@ photo of both outputs and the code that was used
 The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. 
 
 photo of code when collecting data and the output
-
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
 Change this
 
 One can see that the loop duration is approximately 3ms when the sensors are inactive, but extends to around 12ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.
@@ -230,5 +230,5 @@ photo of code
 
 These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations which are displayed below. 
 
-Photo of graph
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true)
 

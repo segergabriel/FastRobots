@@ -159,7 +159,7 @@ Here is the outputs from the serial plotter when it's held flat and when lifted.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroplot.png?raw=true)
 
 
-### Complimentaray Filter
+### Complimentary Filter
 To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true)
@@ -174,19 +174,19 @@ In addition to the data management, I had to combine two files in order to be ab
 ## LAB 3: Time-Of-Flight Sensor
 
 ### Lab Objective
-The goal of this lab was to connect the Artemis board to two VL53L1X Time-of-Flight Distance Sensors. This involved soldering and connecting the sensors to the Artemis board.  Distance sensors will allow our robot to detect and react to obstacles in future tasks, and the faster the robot can sample data, the faster it will be able to dribe. 
+The goal of this lab was to connect the Artemis board to two VL53L1X Time-of-Flight Distance Sensors. This involved soldering and connecting the sensors to the Artemis board.  Distance sensors will allow our robot to detect and react to obstacles in future tasks, and the faster the robot can sample data, the faster it will be able to drive. 
 
 ### Prelab
 Prior to executing the lab, the VL53L1X's user manual and datasheet were reviewed. Before starting this lab, several considerations regarding the ToF sensors had to be decided on. 
 
-First, when constructing the robot, we will use two VL53L1X Time-of-Flight sensors, which utilize the same I2C address. To fix this, an gpio pin from the Artemis board was used to deactivate one sensor, allowing for the I2C address of the second sensor to be reconfigured. Following this, the inactive sensor was turned on again, enabling distinct address assignments for both sensors. This method ensured that both ToF sensors could operate at the same time and be read independently.
+First, when constructing the robot, we will use two VL53L1X Time-of-Flight sensors, which utilize the same I2C address. To fix this, a gpio pin from the Artemis board was used to deactivate one sensor, allowing for the I2C address of the second sensor to be reconfigured. Following this, the inactive sensor was turned on again, enabling distinct address assignments for both sensors. This method ensured that both ToF sensors could operate at the same time and be read independently.
 
-The positioning of the ToF sensors is important and can influence differnet charachteristics. Given the robot's forward motion, I decided to position one ToF sensor at the front. Placement of the second sensor could vary however. If I positioned it at the front too, it would provide better data for frontal obstacles, but could limit spatial awareness. Installing a sensor at the back would improve navigational awareness when the robot rotates 180 degrees. Hoewever, to have quicker environmental perception without the need for the robot to rotate, I decided to place the second ToF sensor on of the sides of the robot. This side placement will give the best opportunity for the robot to understand its surroundings as fast as possible in my opinion. 
+The positioning of the ToF sensors is important and can influence different characteristics. . Given the robot's forward motion, I decided to position one ToF sensor at the front. Placement of the second sensor could vary, however. If I positioned it at the front too, it would provide better data for frontal obstacles but could limit spatial awareness. Installing a sensor at the back would improve navigational awareness when the robot rotates 180 degrees. However, to have quicker environmental perception without the need for the robot to rotate, I decided to place the second ToF sensor on one of the sides of the robot. This side placement will give the best opportunity for the robot to understand its surroundings as fast as possible in my opinion. 
 
 ### Connecting the first ToF sensor
-photo of breadboard
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
 
-First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different adresses, as noted in the prelab.
+First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different addresses, as noted in the prelab.
 
 ### I2C
 
@@ -206,7 +206,7 @@ I needed to evaluate the accuracy of the sensor at shorter distances, as those a
 
 ### 2 TOF sensors
 
-To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assignined distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to adress 0x29. After this, both sensors were able to function concurrently and effectively gather data.
+To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assigned distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to address 0x29. After this, both sensors were able to function concurrently and effectively gather data.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
@@ -218,13 +218,12 @@ The response time of the sensors are a limiting factor and therefore, I modify t
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
-Change this
 
-One can see that the loop duration is approximately 3ms when the sensors are inactive, but extends to around 12ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.
+One can see that the loop duration is approximately 2ms when the sensors are inactive but extends to around 20ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.
 
 ### Time versus Distance
 
-I modfied the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
+I modified  the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
 

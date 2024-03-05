@@ -68,7 +68,21 @@ video of beating fric on ground
 
 
 
-Calibration demonstration (discussion, video, code, pictures as needed)
-Open loop code and video
+### Calibration 
 
+Due to the motors producing different torque outputs, a calibration factor was necessary to ensure that both sides of the car moved equally, allowing the robot to move in a straight line.
+
+Here is a video of the car attempting to move in a straight before any calibrations.
+
+Finding the calibration factor involved setting the upper PWM limit to 255 and test the effective range above the lower limits to identify usable PWM values. The ratio between the ranges for both sides was calculated and applied during testing. The right wheels were set to a pwm value of 100, and calculations suggested the left wheels should be set to 110 to maintain a straight movement. However, after playing around with some values during physical testing, I realized that the left wheels required a pwm setting of 108 to ensure that the robot moved straight and not veering left. So, the calibration factor for the left wheel was adjusted to 1.08 and this factor was added to change_speed().
+
+These two videos show the result as the robot moves in a straight line for 6 feet.
+
+### Open loop Control
+
+Our last task was to execute an open loop control stunt. My stunt shows the robot's ability to move straight, veer left, veer right, spin. This sequence is open loop control, as it's preprogrammed commands without receiving any feedback from the system.
+
+Here is the code for this control,
+
+Here is a video
 

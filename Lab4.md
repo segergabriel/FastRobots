@@ -1,8 +1,8 @@
-## LAB 4: Motors and open Loop Control
+## LAB 4: Motors and Open Loop Control
 
 ### Lab Objective
 
-The goal of this lab was to transition the control of our car from manual to open loop. This involved first connecting the two motor drivers to the Artemis board and then programming the car to perform a sequence of movems.
+The goal of this lab was to transition the control of our car from manual to open loop. This involved connecting the two motor drivers to the Artemis board and then programming the car to perform a sequence of moves.
 
 ### Prelab
 
@@ -12,7 +12,8 @@ Two dual motor drivers were used to connect the motors to the Artemis and the pi
 
 Therefore, I soldered the driver's inputs and outputs together. We also had to decide on the power connection strategy for the motor drivers, given the battery only having two leads. The resolution solution was to run a wire from the VCC pad of one motor driver, soldering it in place, and then connecting a smaller wire from the VCC pad of the second driver to the main wire. The same strategy was applied for ground. See my schematic below. 
 
-pic of schematic
+pic of schematic,ex
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the previously explained diagram. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground.
 
@@ -31,9 +32,13 @@ pic of osci
 
 In the next step, the dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply. The wheels are programmed to rotate in alternating directions for 1 second each. The same thing was done for both sides independently.
 
-video of spinning one side
+video of spinning one side, ex below
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/J3cUdux_d7M">
+</iframe>
 
-The code below was used. 
+The code below was used.ex
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
 code snippet for your analogWrite code that tests the motor drivers, left and right
 

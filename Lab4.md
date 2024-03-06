@@ -56,6 +56,12 @@ video of both wheels
 <iframe width="420" height="315"
 src="https://youtu.be/embed/q_gHfBxJ-Ms">
 </iframe>
+<iframe width="420" height="315"
+src="https://youtu.be/embed/S_aXteHxM0U">
+</iframe>
+https://youtu.be/S_aXteHxM0U
+
+https://www.youtube.com/watch?v=q_gHfBxJ-Ms
 
 ### Assembly
 Picture of all the components secured in the car

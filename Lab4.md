@@ -49,7 +49,7 @@ src="https://www.youtube.com/embed/9mbQQSKdTAk">
 
 ### Assembly
 
-The picture below demonstrates how my assembly looks for now. Most sensors are put in place but for this lab I'm keeping the motor drivers and the Artemis free in case I need to move htem arournd o adjust them. I'm planning to attach them to the car using double sided tape after the completition of this lab.
+The picture below demonstrates my current assembly. Most sensors are put in place but for this lab I'm keeping the motor drivers and the Artemis free in case I need to move htem arournd o adjust them. I'm planning to attach them to the car using double sided tape after the completition of this lab.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4assembly.jpeg?raw=true)
 

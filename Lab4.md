@@ -80,7 +80,7 @@ src="https://www.youtube.com/embed/fN-5_G622G8">
 video of beating fric on ground
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=PyoF2chNE4k">
+src="https://www.youtube.com/embed/PyoF2chNE4k">
 </iframe>
 
 
@@ -91,7 +91,7 @@ Due to the motors producing different torque outputs, a calibration factor was n
 Here is a video of the car attempting to move in a straight before any calibrations.
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/shorts/S-Qjl9JszjQ">
+src="https://www.youtube.com/embed/S-Qjl9JszjQ">
 </iframe>
 
 Finding the calibration factor involved setting the upper PWM limit to 255 and test the effective range above the lower limits to identify usable PWM values. The ratio between the ranges for both sides was calculated and applied during testing. The right wheels were set to a pwm value of 100, and calculations suggested the left wheels should be set to 110 to maintain a straight movement. However, after playing around with some values during physical testing, I realized that the left wheels required a pwm setting of 108 to ensure that the robot moved straight and not veering left. So, the calibration factor for the left wheel was adjusted to 1.08 and this factor was added to change_speed().

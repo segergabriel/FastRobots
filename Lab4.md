@@ -36,10 +36,6 @@ In the next step, the dual motor driver was connected to one of the motors. The 
 video of spinning one side
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/J3cUdux_d7M">
-</iframe>
-
-<iframe width="420" height="315"
 src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
@@ -58,7 +54,7 @@ code of both wheels
 
 video of both wheels
 <iframe width="420" height="315"
-src="https://youtu.be/q_gHfBxJ-Ms">
+src="https://youtu.be/embed/q_gHfBxJ-Ms">
 </iframe>
 
 ### Assembly
@@ -77,7 +73,7 @@ The videos demonstrate that at a PWM value of 31, the car's wheels begin to beat
 
 video of not beating fric
 <iframe width="420" height="315"
-src="https://www.youtube.com/shorts/fN-5_G622G8">
+src="https://www.youtube.com/embed/fN-5_G622G8">
 </iframe>
 
 
@@ -103,7 +99,7 @@ Finding the calibration factor involved setting the upper PWM limit to 255 and t
 This videos show the result as the robot moves in a straight line for 6 feet.
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/shorts/PSpE31sPj2U">
+src="https://www.youtube.com/embed/PSpE31sPj2U">
 </iframe>
 
 ### Open loop Control
@@ -115,6 +111,6 @@ Here is the code for this control,
 Here is a video
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=PyoF2chNE4k">
+src="https://www.youtube.com/embed/watch?v=PyoF2chNE4k">
 </iframe>
 

@@ -27,8 +27,7 @@ Given that the battery is supplying power to the motors at 3.7V, the power suppl
 
 The image below shows the oscilloscope readings when one of the motor driver inputs receives power. The is 3.15V, which is close to the expected 3.3V output from the GPIO pin. Additionally, the duty cycle has a ratio of approximately 195/256, indicating that the waveform remains mostly high throughout its period. The blue curve represents the positive output voltage to the motor while the yellow curve represents the negative output voltage to the motor. As expected, the yellow curve should be 0, while the blue curve shows the voltage values. 
 
-pic of osci, do this
-
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4osciout.png?raw=true)
 
 In the next step, one dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply while rotating in alternating directions for 1 second each. The same thing was done for both sides of the car independently.
 
@@ -49,8 +48,10 @@ src="https://www.youtube.com/embed/9mbQQSKdTAk">
 </iframe>
 
 ### Assembly
-Picture of all the components secured in the car
-Consider labeling your picture if you can’t see all the components
+
+The picture below demonstrates how my assembly looks for now. Most sensors are put in place but for this lab I'm keeping the motor drivers and the Artemis free in case I need to move htem arournd o adjust them. I'm planning to attach them to the car using double sided tape after the completition of this lab.
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4assembly.jpeg?raw=true)
 
 ### Lower limit PWM value
 

@@ -32,9 +32,9 @@ pic of osci
 
 In the next step, the dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply. The wheels are programmed to rotate in alternating directions for 1 second each. The same thing was done for both sides independently.
 
-video of spinning one side, ex below
+video of spinning one side
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/J3cUdux_d7M">
+src="https://www.youtube.com/shorts/2yOHqZwpEz0">
 </iframe>
 
 The code below was used.ex
@@ -51,6 +51,9 @@ I used this function to program both wheels to spin in both directions independe
 code of both wheels 
 
 video of both wheels
+<iframe width="420" height="315"
+src="https://youtu.be/q_gHfBxJ-Ms">
+</iframe>
 
 ### Assembly
 Picture of all the components secured in the car
@@ -66,11 +69,17 @@ The motors were tested to determine their operational range, focusing on finding
 
 The videos demonstrate that at a PWM value of 31, the car's wheels begin to beat friction, but they fully beat the kinetic friction at 35. Therefore, a PWM setting of 31 is sufficient to beat dynamic friction, while 35 is effective for overcoming static friction.
 
-video of spinnin slow in air
+video of not beating fric
+<iframe width="420" height="315"
+src="https://www.youtube.com/shorts/fN-5_G622G8">
+</iframe>
+
 
 video of beating fric on ground
 
-
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=PyoF2chNE4k">
+</iframe>
 
 
 ### Calibration 
@@ -79,9 +88,17 @@ Due to the motors producing different torque outputs, a calibration factor was n
 
 Here is a video of the car attempting to move in a straight before any calibrations.
 
+<iframe width="420" height="315"
+src="https://www.youtube.com/shorts/S-Qjl9JszjQ">
+</iframe>
+
 Finding the calibration factor involved setting the upper PWM limit to 255 and test the effective range above the lower limits to identify usable PWM values. The ratio between the ranges for both sides was calculated and applied during testing. The right wheels were set to a pwm value of 100, and calculations suggested the left wheels should be set to 110 to maintain a straight movement. However, after playing around with some values during physical testing, I realized that the left wheels required a pwm setting of 108 to ensure that the robot moved straight and not veering left. So, the calibration factor for the left wheel was adjusted to 1.08 and this factor was added to change_speed().
 
-These two videos show the result as the robot moves in a straight line for 6 feet.
+This videos show the result as the robot moves in a straight line for 6 feet.
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/shorts/PSpE31sPj2U">
+</iframe>
 
 ### Open loop Control
 
@@ -90,4 +107,8 @@ Our last task was to execute an open loop control stunt. My stunt shows the robo
 Here is the code for this control,
 
 Here is a video
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=PyoF2chNE4k">
+</iframe>
 

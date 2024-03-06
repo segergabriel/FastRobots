@@ -6,14 +6,14 @@ The goal of this lab is to transition the control of our car from manual to open
 
 ### Prelab
 
-First I read throught the datasheet to understand the motors that we are working with. One can see it here: [datasheet](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdrv8833)
+First I read through the datasheet to understand the motors that we are working with. One can see it here: [Datasheet](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdrv8833)
 
 Two dual motor drivers were then used to connect the motors to the Artemis and the pins had to be pwm capable in order to get input to them. The first motor was connected to pins 7 and 9 and the second one to pins 11 and 12. To integrate the motor drivers, the motor inputs and outputs were configured in parallel due to the utilization of only two inputs, despite four being available. 
 
 Therefore, I soldered the driver's inputs and outputs together. We also had to decide on the power connection strategy for the motor drivers, given that the battery only have two leads. The solution was to run a wire from the VCC pad of one motor driver, soldering it in place, and then connecting a smaller wire from the VCC pad of the second driver to the main wire. The same strategy was applied for ground. See my schematic below. 
 
 pic of schematic, do this
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
+
 
 We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the schematic above. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground.
 
@@ -37,9 +37,10 @@ src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
 The code that was used is shown below. 
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4onewheel.png?raw=true)
 
-Next, I connected the battery and executed the code for both motor drivers at the same time. I created a function, new_speed, to help with this. See my implementation and the video of both wheels below. 
+Next, I connected the battery and executed the code for both motor drivers at the same time. I created a function, new_speed, to help with this. See my implementation and the video of both wheels spinning below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4newspeed.png?raw=true)
 
@@ -87,13 +88,15 @@ src="https://www.youtube.com/embed/PSpE31sPj2U">
 
 ### Open loop Control
 
-Our last task was to execute an open loop control stunt. My stunt shows the robot's ability to move straight, veer left, veer right, spin. This sequence is open loop control, as it's preprogrammed commands without receiving any feedback from the system.
+Our last task was to execute an open loop control stunt. My stunt shows the robot's ability to move straight, back up, veer left, veer right and then spin. This sequence is open loop control, as it's preprogrammed commands without receiving any feedback from the system.
 
 Here is the code for these commands and the video that displays the car executing these moves.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4stunt.png?raw=true)
 
+change this
+
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/watch?v=PyoF2chNE4k">
+src="https://www.youtube.com/embed/PyoF2chNE4k">
 </iframe>
 

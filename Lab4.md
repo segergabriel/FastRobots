@@ -2,22 +2,23 @@
 
 ### Lab Objective
 
-The goal of this lab was to transition the control of our car from manual to open loop. This involved connecting the two motor drivers to the Artemis board and then programming the car to perform a sequence of moves.
+The goal of this lab is to transition the control of our car from manual to open loop. This involved connecting the two motor drivers to the Artemis board and programming the car to perform a sequence of moves.
 
 ### Prelab
 
-First checked out sheets, link them
+First I read throught the datasheet to understand the motors that we are working with. One can see it here:
+https://www.ti.com/lit/ds/symlink/drv8833.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1709691013509&ref_url=https%253A%252F%252Ffastrobotscornell.github.io%252F
 
-Two dual motor drivers were used to connect the motors to the Artemis and the pins had to be pwm capable in order to get input to them. The first motor was connected to pins 7 and 9 and the second one to pins 11 and 12. To integrate the motor drivers, the motor inputs and outputs were configured in parallel due to the utilization of only two inputs, despite four being available. 
+Two dual motor drivers were then used to connect the motors to the Artemis and the pins had to be pwm capable in order to get input to them. The first motor was connected to pins 7 and 9 and the second one to pins 11 and 12. To integrate the motor drivers, the motor inputs and outputs were configured in parallel due to the utilization of only two inputs, despite four being available. 
 
-Therefore, I soldered the driver's inputs and outputs together. We also had to decide on the power connection strategy for the motor drivers, given the battery only having two leads. The resolution solution was to run a wire from the VCC pad of one motor driver, soldering it in place, and then connecting a smaller wire from the VCC pad of the second driver to the main wire. The same strategy was applied for ground. See my schematic below. 
+Therefore, I soldered the driver's inputs and outputs together. We also had to decide on the power connection strategy for the motor drivers, given that the battery only have two leads. The solution was to run a wire from the VCC pad of one motor driver, soldering it in place, and then connecting a smaller wire from the VCC pad of the second driver to the main wire. The same strategy was applied for ground. See my schematic below. 
 
-pic of schematic,ex
+pic of schematic, do this
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 
-We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the previously explained diagram. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground.
+We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the schematic above. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground.
 
-pic of connection to oscilliscope
+pic of connection to oscilliscope, do this
 
 ### Power supply 
 
@@ -27,14 +28,19 @@ Given that the battery is supplying power to the motors at 3.7V, the power suppl
 
 The image below shows the oscilloscope readings when one of the motor driver inputs receives power. The is 3.15V, which is close to the expected 3.3V output from the GPIO pin. Additionally, the duty cycle has a ratio of approximately 195/256, indicating that the waveform remains mostly high throughout its period. The blue curve represents the positive output voltage to the motor while the yellow curve represents the negative output voltage to the motor. As expected, the yellow curve should be 0, while the blue curve shows the voltage values. 
 
-pic of osci
+pic of osci, do this
 
 
-In the next step, the dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply. The wheels are programmed to rotate in alternating directions for 1 second each. The same thing was done for both sides independently.
+In the next step, the dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply while rotating in alternating directions for 1 second each. The same thing was done for both sides of the car independently.
 
 video of spinning one side
+
 <iframe width="420" height="315"
-src="https://www.youtube.com/shorts/2yOHqZwpEz0">
+src="https://www.youtube.com/embed/J3cUdux_d7M">
+</iframe>
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
 The code below was used.ex

@@ -14,9 +14,9 @@ Therefore, I soldered the driver's inputs and outputs together. We also had to d
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/IMG_6939.jpeg?raw=true)
 
-We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the schematic above. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground.
+We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the schematic above. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground. See my connection below. 
 
-pic of connection to oscilliscope
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true)
 
 ### Power supply 
 
@@ -28,13 +28,13 @@ The image below shows the oscilloscope readings when one of the motor driver inp
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4osciout.png?raw=true)
 
-In the next step, one dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply while rotating in alternating directions for 1 second each. The same thing was done for both sides of the car independently.
+In the next step, one dual motor driver was connected to one of the motors. The video below shows the motors being powered by the power supply while rotating in alternating directions for 1 second each. The same thing was done for both sides of the car independently. For this step and for the rest of the lab, we used the analogWrite function to set the pwm values. The higher the value, the faster the wheels will spin and therefore, the faster the car will move. 
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
-The code that was used is shown below. 
+The code that was used for this task is shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4onewheel.png?raw=true)
 

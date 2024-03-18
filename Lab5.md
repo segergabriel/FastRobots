@@ -8,7 +8,7 @@ In this lab, PID control was implemented on the robot, using one of the ToF sens
 
 #### Sending and receiving data over Bluetooth
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5fbuffers.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5buffers.png?raw=true)
 pics of buffers
 
 pics of case
@@ -46,8 +46,11 @@ code
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5setpid.png?raw=true)
 cases, set pid and start
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5startpid.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5startpidloop.png?raw=true)
 
-how they werw called in jupyter
+ called in jupyter jupyter same as before, 
+ ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5jupcall.png?raw=true)
 
 ### Results
 

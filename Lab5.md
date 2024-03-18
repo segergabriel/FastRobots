@@ -8,73 +8,96 @@ In this lab, PID control was implemented on the robot, using one of the ToF sens
 
 #### Sending and receiving data over Bluetooth
 
+To send and receive data, I used the same command as in previous labs, with some slight modification in order to send over the curretn time,  TOF sensor data and speed of the motors over bluetooth. Below are the buffers that my values were stored in. 
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5buffers.png?raw=true)
-pics of buffers
 
-pics of case
-
-pics of jupyter, used same as before but added things
-
-Consider adding code snippets as necessary to showcase how you implemented this on Arduino and Python
-
-
-
+One can see that it stores data as long as it haven't reached the maximum data size. This process occurs within a time loop, ensuring that whenever data becomes available, it's captured in an array, timestamped, and then processed through PID control. At the end of the loop, the arrays are sent to the host computer in a similiar way as previous labs. In Python, this data is then organized into a dictionary in the same way as before. In the lab task I'll explain in more detail on how commands and cases were used.
 
 ### Lab Tasks
 
+#### Range and Sampling Time Discussion
 
-### Range/Sampling time discussion
 
-98 ms /s
+I gathered all the sensor data at once, and by tracking the interval between each measurement, I determined the average sampling period to be around 98ms. See image below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freqout1.png?raw=true)
 
-pic of motor vs distance
+This equates to a sampling frequency of about 10Hz, limiting the loop's execution speed to a maximum of 10Hz. Later, I'll have to separate these measurements to enhance the IMU measurements' sampling rate. From our findings in Lab 3, we know that the TOF sensor's effective range is up to 4m, indicating that the maximum potential error from the TOF sensor could reach up to 4000mm. Additionally, it needed to find the robot's top speed. For this, I analyzed one of the trials by calculating the slope between two points.
 
-code output of time between loop
+need pic of slope here, pic of motor vs distance
 
-write about thism calculations too
+It resulted in a calculated speed of 2.1 m/s. This value is on the higher side,  considering that trials initiated closer to the wall yielded speeds much slower. I previous labs, I also identified that the deadband corresponds to a PWM value of 31, which was an important factor to consider.
 
 ### PID Discussion 
 
-kp first, go over all values
+A PID controller takes in the error of the desired value and the current value, and uses a proportional, integral, and derivative controller to change the control input of the robot to the desired value. Below is the formula
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5formula.png?raw=true)
+
+The first parameter to find was Kp. Given that proportional control involves the multiplication of the error by a constant to estimate a PWM value, the equation for the maximum PWM value can be set as follows: maximum PWM value = (maximum error) * Kp. Kp is also approximately equal to the ratio of the maximum PWM value to the maximum error, calculated as 255/4000, which gives us approximately 0.06. This suggested that the magnitude of Kp should be around this value.
+
+For Ki, considering it multiplies the cumulative error which increases with each sampling period being around 98ms. If Ki were to mirror the influence of Kp, then Ki would equal Kp/sampling frequency, which is 0.006 when considering a 10Hz frequency. To prevent the integral sum from becoming too large and since the robot starts far from the wall, the error accumulation was capped at approximately 100mm.
+
+Kd relates to the rate of error change, acting as the derivative of the position. Given the robot's maximum speed of 2.1m/s, Kd can be estimated by dividing the maximum PWM by the maximum rate of change in error, which is (255 * 0.1s) / 2.1m/s, resulting in approximately 12. Kd's impact is meant to be ssmaller than Kp's so it was therefore adjusted to about 1 to start.
+
 
 ### PID Implementation
 
+A function pid() was created to implement the PID controller. This is shown below. 
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5pidcode.png?raw=true)
-code 
+
+I takes Kp, Ki and Kd as inputs and then do calculations based on these and the sensor readding to determine pwm value of the motors. 
+
+I used my deadband value as the 'min_threshold' value to ensure the PWM outputs are sufficient to initiate robot movement, which was set to 35 based on lab 5. I aslo had to regulate the accumulator for easier sign reversal of the error. The integral accumulator effectively managed any potential windup issues and was set to 100 as previously noted. Due to the gradual change in error and the low frequency of data from the TOF sensor, implementing a low pass filter was deemed unnecessary. Finally, adjuestments regarding derivative kick were not needed as my error derivative is continuous. 
+
+I created command, “SET_PID” to change my pid values over bluetooth as shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5setpid.png?raw=true)
-cases, set pid and start
+
+I also created a command, “START_PID”, which allowed me to start and stop the robot over bluetooth. This was a big advantage when debugging. It basically sets a flag low or high and then in my main loop, as long as that flag is high, the pid function is running. This is shown below. 
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5startpid.png?raw=true)
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5startpidloop.png?raw=true)
 
- called in jupyter jupyter same as before, 
- ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5jupcall.png?raw=true)
+They are called in Jupyter like this. 
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5jupcall.png?raw=true)
 
 ### Results
 
-Videos and explaining them
+To find the right values, I used the 2nd heuristic approach which was discussed in lecture. I also had an idea of what range the values shoulf be in form my calculations. So, for my first trial I increased Kp from about 0.006 until the car overshot the 300mm mark. Kp value for this trial was set to 0.06. As one can see below, the car overshoots a lot.  
+
+video trial 1
+trial 6 tof reading
+
+For my second trial I added the Ki term which was set to 0.1 while Kp was 0.08. The car moves fast but hits the wall.
+
+trial 2 vid
+
+For the third trial I added the Kd term which was set to 0.8 while the other two were kept the same. The car still overshoots but doesn't hit the wall now. 
+
+trial 3 vid
+
+For my fourth trial, I decreased Ki to 0.001 and increased Kd to 2, in order to get more stability. This is shown below. 
+
+trial 4 vid
+
+For the fifth trial I changed Kp back to 0.06. This reulted in a stable system but the car was moving a fairly slow. 
+
+trial 5 vid
+trial 6 tof reading
+
+For my final trial, I changed Kp to 0.08, Ki to 0.004 and Kd to 5. This also resulted in a pretty stable system while the car moved faster. See below. 
+
+trial 6 vid
+
+trial 6 tof reading
 
 grpahs distance vs time
 
-
-
-Graph data should include Tof vs time and Motor input vs time (and whatever helps with debugging)
-also all tips
-
-LOG DATA: If you don’t want to repeat work during Lab 7, be sure to log all data (time stamped sensor values and motor outputs), as well as setup variables from at least one successful run. Even if you are doing orientation control, be sure to log ToF data as you speed towards the wall as well.
-Lectures: Brush up on your PID control skills by checking out Lectures 7 and 8.
-PID library: There exists an Arduino PID library. You are welcome to use this library if you prefer, but we will only offer limited TA support if you run into issues. Implementing a basic PID controller from scratch is easy (<10 lines of code), and will give you more freedom in dealing with noise, wind-up, and system non-linearities.
-Start simple: E.g. with a proportional controller running at low speeds and a generous setpoint, then you can work your way up to faster speeds, more advanced control, and more difficult setpoints if you have time.
-Documentation: Please clearly document the maximum linear or angular speed you are able to achieve (you can use your sensors to compute this). To demonstrate reliability, please upload videos of at least three repeated (and hopefully successfull) experiments.
-Frequency: Fast loop times means everything to a good controller. Be sure to include a discussion of sensor sampling rate and how this affects the timing of your control loop. Avoid using blocking statements when you can (e.g. delay() or while(sensor not ready) ){wait} ). Also, remember that any serial.print/BLE sending that occurs during execution may slow down your loop time considerably.
-Deadband: From Lab 5, you should have found the deadband of your motor (the region below which the power to the motors does not overcome the static friction in your system). Consider writing a scaling function that converts the output from your PID controller to an output for which the motors can actually react.
-Wind up: If you include an integrator, consider whether you need to worry about integrator wind-up.
-Derivative LPF: If you include a derivative, consider whether it is necessary to include a low pass filter in the derivative branch.
-Derivative kick: Consider whether the derivative kick can cause any issues, given the task you choose. Here is a great overview on how to eliminate derivative kick: http://brettbeauregard.com/blog/2011/04/improving-the-beginner’s-pid-derivative-kick/
-Anything goes: The goal is a working system. When you have a reasonable control setup working, you should feel free to add any “hacks” that will improve your robot performance in a reliable way. If you don’t have time to implement them, discussing what you imagine would help can still get you grading points.
-Motor drivers: Recall Lecture 6 on Actuators and that the motor drivers have both coasting and active breaking modes. These might come in handy.
 
 ### Extrapolation
 

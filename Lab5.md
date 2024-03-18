@@ -18,16 +18,15 @@ One can see that it stores data as long as it haven't reached the maximum data s
 
 #### Range and Sampling Time Discussion
 
-
 I gathered all the sensor data at once, and by tracking the interval between each measurement, I determined the average sampling period to be around 98ms. See image below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freqout1.png?raw=true)
 
 This equates to a sampling frequency of about 10Hz, limiting the loop's execution speed to a maximum of 10Hz. Later, I'll have to separate these measurements to enhance the IMU measurements' sampling rate. From our findings in Lab 3, we know that the TOF sensor's effective range is up to 4m, indicating that the maximum potential error from the TOF sensor could reach up to 4000mm. Additionally, it needed to find the robot's top speed. For this, I analyzed one of the trials by calculating the slope between two points.
 
-need pic of slope here, pic of motor vs distance
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5motorfig.png?raw=true)
 
-It resulted in a calculated speed of 2.1 m/s. This value is on the higher side,  considering that trials initiated closer to the wall yielded speeds much slower. I previous labs, I also identified that the deadband corresponds to a PWM value of 31, which was an important factor to consider.
+It resulted in a calculated speed of 2.1 m/s. This value is on the higher side considering that trials initiated closer to the wall yielded speeds much slower. I previous labs, I also identified that the deadband corresponds to a PWM value of 31, which was an important factor to consider.
 
 ### PID Discussion 
 

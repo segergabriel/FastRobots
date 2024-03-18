@@ -31,7 +31,7 @@ It resulted in a calculated speed of 2.1 m/s. This value is on the higher side, 
 
 ### PID Discussion 
 
-A PID controller takes in the error of the desired value and the current value, and uses a proportional, integral, and derivative controller to change the control input of the robot to the desired value. Below is the formula
+A PID controller takes in the error of the desired value and the current value, and uses a proportional, integral, and derivative controller to change the control input of the robot to the desired value. Below is the formula.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5formula.png?raw=true)
 
@@ -101,9 +101,17 @@ grpahs distance vs time
 
 ### Extrapolation
 
-writee about this
+Previously I determined that the ToF sensor is returning data new data every 98 ms. This is also the rate that the PID control loop was running as well, which is slow. Therefore, we wanted to decouple these two rates. 
 
-pics of code
+So, I change my loop to calulate the PID control every loop, even if there is no new data from the ToF sensor. I did this by checking if new data from the ToF sensor is ready. If it was, I updated the variable that PID controller is using to estimate the motor speed. Otherwise I recalculate the PID control using using the last saved datapoint. This made my PID controller run much faster than before, as it was executed every 2ms. See picture below.
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freq2.png?raw=true)
+
+
+Finally I wanted to extrapolate an estimate for the car’s distance to the wall using the last two datareadings from the ToF sensor. So, I calcuated the slope from the last two datapoint, and extrapolated the current distance based on the amount of time that has passed since the last reading and the slope. Everytime I got a new ToF reading, I used it along with the previous reading to estimate the current distance to the wall until a new reading were recieved. I created a estimateDistance funtion to help with this. See my full implementation below. 
+
+
+
 
 videos of results
 

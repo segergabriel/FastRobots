@@ -8,3 +8,4 @@ Welcome to my Fast Robots webpage. This page will contain all the labs that I wi
 * [Lab 2: IMU](./Lab2.md)
 * [Lab 3: Time-Of-Flight Sensor](./Lab3.md)
 * [Lab 4: Motors and Open Loop Control](./Lab4.md)
+* [Lab 5: Linear PID control and Linear interpolation](./Lab5.md)

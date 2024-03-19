@@ -73,22 +73,23 @@ To find the right values, I used the 2nd heuristic approach which was discussed 
 src="https://www.youtube.com/embed/3vLwYi0CzaI">
 </iframe>
 
- tof reading
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5trial1.png?raw=true)
 
 For my second trial I added the Ki term which was set to 0.1 while Kp was 0.08. The car moves fast but hits the wall.
 
-video trial 2
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/9bH4EelaNU0">
 </iframe>
 
-For the third trial I added the Kd term which was set to 0.8 while the other two were kept the same. The car still overshoots but doesn't hit the wall now. 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5trial2.png?raw=true)
 
-trial 3 vid
+For the third trial I added the Kd term which was set to 0.8 while the other two were kept the same. The car still overshoots but doesn't hit the wall now. 
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/lNdR3JWTXPk">
 </iframe>
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5trial3.png?raw=true)
 
 For my fourth trial, I decreased Ki to 0.001 and increased Kd to 2, in order to get more stability. This is shown below. 
 
@@ -102,19 +103,15 @@ For the fifth trial I changed Kp back to 0.06. This reulted in a stable system b
 src="https://www.youtube.com/embed/d7FBGt1Q8E8">
 </iframe>
 
-trial 5 tof reading
-
 For my final trial, I changed Kp to 0.08, Ki to 0.004 and Kd to 5. This also resulted in a pretty stable system while the car moved faster. See below. 
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/shorts/eIUTbah_spA">
+src="https://www.youtube.com/embed/eIUTbah_spA">
 </iframe>
 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5finaltrial.png?raw=true)
 
-trial 6 tof reading
-
-grpahs distance vs time
-
+write about send data prob prelab
 
 ### Extrapolation
 
@@ -123,7 +120,6 @@ Previously I determined that the ToF sensor is returning data new data every 98 
 So, I change my loop to calulate the PID control every loop, even if there is no new data from the ToF sensor. I did this by checking if new data from the ToF sensor is ready. If it was, I updated the variable that PID controller is using to estimate the motor speed. Otherwise I recalculate the PID control using using the last saved datapoint. This made my PID controller run much faster than before, as it was executed every 2ms. See picture below.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freq2.png?raw=true)
-
 
 Finally I wanted to extrapolate an estimate for the car’s distance to the wall using the last two datareadings from the ToF sensor. So, I calcuated the slope from the last two datapoint, and extrapolated the current distance based on the amount of time that has passed since the last reading and the slope. Everytime I got a new ToF reading, I used it along with the previous reading to estimate the current distance to the wall until a new reading were recieved. I created a estimateDistance funtion to help with this. See my full implementation below. 
 

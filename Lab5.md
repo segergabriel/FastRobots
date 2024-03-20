@@ -90,7 +90,7 @@ src="https://www.youtube.com/embed/9bH4EelaNU0">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5trial2.png?raw=true)
 
-For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same. The car still overshoots but doesn't hit the wall now. 
+For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same. The car still overshoots but doesn't hit the wall. 
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/lNdR3JWTXPk">
@@ -138,6 +138,6 @@ Here is the resulting video and figure.
 src="https://www.youtube.com/embed/soxy59opGnA">
 </iframe>
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freq2.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5finaltrial.png?raw=true)
 
 

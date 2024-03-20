@@ -123,9 +123,18 @@ So, I change my loop to calulate the PID control every loop, even if there is no
 
 Finally I wanted to extrapolate an estimate for the car’s distance to the wall using the last two datareadings from the ToF sensor. So, I calcuated the slope from the last two datapoint, and extrapolated the current distance based on the amount of time that has passed since the last reading and the slope. Everytime I got a new ToF reading, I used it along with the previous reading to estimate the current distance to the wall until a new reading were recieved. I created a estimateDistance funtion to help with this. See my full implementation below. 
 
+code:
 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5pidextra.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5extraloop.png?raw=true)
 
+video
 
-videos of results
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/soxy59opGnA">
+</iframe>
+
+Here is the figure
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5freq2.png?raw=true)
 
 

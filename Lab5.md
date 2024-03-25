@@ -138,6 +138,6 @@ Here is the resulting video and figure.
 src="https://www.youtube.com/embed/soxy59opGnA">
 </iframe>
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5finaltrial.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/5extrafig.png?raw=true)
 
 

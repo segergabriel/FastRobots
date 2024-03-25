@@ -8,13 +8,12 @@ we applied PID control to manage wall distance through TOF sensors. This time, t
 ### Lab Tasks
 
 #### Bluetooth
+
 Bluetooth communication was set up in the same way as Lab 5. The only thing that was added was an additional buffer in order to track the speed of both wheels, which was needed to graph motor offsets. 
 
 #### PID Discussion 
 
-
-Graphs, code, videos, images, discussion of reaching task goal
-Graph data should at least include theta vs time (you can also consider angular velocity, motor input, etc)
+For a in depth PID discussion refer to [Lab 5](https://segergabriel.github.io/FastRobots/Lab5.html). The same priciples and math is taken into account for my implementation in this lab. The procedure will also follow the same protocol, with starting to find a suitable value for Kp followed by Ki and Kd. Note that these values will be adjusted for my trials as one can see in the results section. Theoretically, as one increases the proportional gain, the system becomes faster, but the system might become unstable. The integral term reduces the steady state error, but can increase overshoot but this will be tweaked to achieve a minimal steady state error. Finally, increasing the derivative term decreases overshoot and yields higher gain with stability but causes the system to be highly sensitive to noise. This will be considered when creating my system.
 
 #### PID Implementation
 
@@ -23,24 +22,23 @@ which will be integrated from the gyroscope readings. The set point would be the
 
 I created my own PID control function, which is very similiar to lab 5. It operates by inputting the computed "duty_cycle" into the "difference" variable that will be past along to writeDifferential(), which adjust the speed of the wheels. To calculate the error, it uses the global variable curretn_orientation, which I will explain later, below is my implementation. 
 
-pic of orientpid
+pic pid
 
 I created updateOrieantion() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. Using the following formula: Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See the function below. 
 
-pic of updateorient
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.jpeg?raw=true)
 
-Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the contrain function here so, the values are bounded. This is shown below. 
+Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the contsrain function here to bound the values. This is shown below. 
 
-
-image of writediff
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.jpeg?raw=true)
 
 Similiar to lab 5, a if statement in my main loop was established to monitor the IMU for new data availability. When the flag is high and new data was detected, updateorient and pid was called. 
 
-pic of main loop
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.jpeg?raw=true)
 
 ### Input Signal and Derivative term
 
-Integrating gyroscope readings, as I did in my implementation, is important for accurately determining the robot's orientation. It converts angular velocity measured by the gyroscope into the rotation angle over time and this is important for effective navigation and stability.
+Integrating gyroscope readings as I did in my implementation, is important for accurately determining the robot's orientation. It converts angular velocity measured by the gyroscope into the rotation angle over time and this is important for effective navigation and stability.
 
 However, it also introduces challenges like drift and noise accumulation over time. Addressing these might require filtering such as using a Kalman filter to smooth out noise, or increasing the sampling rate for better accuracy. Combining gyroscope data with other sensors like accelerometers, can also provide better estimates. I did not have any extreme bias for my sensors so that is not a problem for now. 
 
@@ -50,9 +48,7 @@ Derivative kick happens when a setpoint changes quickly and causes a large spike
 
 ### Results
 
-I started by only focusing on the Kp term and increased it from a low value up to 20. At this value, the system responded quickly but seemed to overshoot a bit.  
-
-
+I started by only focusing on the Kp term and increased it from a veery small value up to 20. At this value, the system responded quickly but seemed to overshoot a bit.  
 
 Video 1 of kp
 graph, set point angle and motor offsets

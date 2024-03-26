@@ -51,19 +51,49 @@ Derivative kick happens when a setpoint changes quickly and causes a large spike
 I started by only focusing on the Kp term and increased it from a veery small value up to 20. At this value, the system responded quickly but seemed to overshoot a bit.  
 
 Video 1 of kp
-graph, set point angle and motor offsets
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/2yOHqZwpEz0">
+</iframe>
+
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle.jpeg?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed.jpeg?raw=true)
 
 For my second trial I added the Ki term which was set to 0.1 while Kp was kept the same. The car responds quicker but overshoots more, which is expected as the integral term increases overshoot.
 
 video 2 kp and ki
-graph
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/2yOHqZwpEz0">
+</iframe>
+
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle2.jpeg?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed2.jpeg?raw=true)
 
 For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same. The car still is now pretty stable and responds quickly but overshoots a little bit. 
 
 video 3 kd too
-graph
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/2yOHqZwpEz0">
+</iframe>
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle3.jpeg?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed3.jpeg?raw=true)
 
 I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also not that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. Below is my final result.
 
 vid 4 with all working and tweaked
-graphs
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/2yOHqZwpEz0">
+</iframe>
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle4.jpeg?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed4.jpeg?raw=true)

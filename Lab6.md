@@ -26,15 +26,15 @@ pic pid
 
 I created updateOrieantion() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. Using the following formula: Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See the function below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true)
 
 Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the contsrain function here to bound the values. This is shown below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true)
 
 Similiar to lab 5, a if statement in my main loop was established to monitor the IMU for new data availability. When the flag is high and new data was detected, updateorient and pid was called. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true)
 
 ### Input Signal and Derivative term
 
@@ -57,9 +57,9 @@ src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle.png?raw=true)
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed.png?raw=true)
 
 For my second trial I added the Ki term which was set to 0.1 while Kp was kept the same. The car responds quicker but overshoots more, which is expected as the integral term increases overshoot.
 
@@ -70,9 +70,9 @@ src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle2.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle2.png?raw=true)
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed2.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed2.png?raw=true)
 
 For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same. The car still is now pretty stable and responds quickly but overshoots a little bit. 
 
@@ -82,9 +82,9 @@ video 3 kd too
 src="https://www.youtube.com/embed/2yOHqZwpEz0">
 </iframe>
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle3.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle3.png?raw=true)
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed3.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed3.png?raw=true)
 
 I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also not that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. Below is my final result.
 

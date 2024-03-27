@@ -53,7 +53,7 @@ I started by only focusing on the Kp term and increased it from a veery small va
 Video 1 of kp
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2yOHqZwpEz0">
+src="https://www.youtube.com/embed/04hKdvyMYvU">
 </iframe>
 
 
@@ -66,7 +66,7 @@ For my second trial I added the Ki term which was set to 0.1 while Kp was kept t
 video 2 kp and ki
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2yOHqZwpEz0">
+src="https://www.youtube.com/embed/90U-nfSJgQw">
 </iframe>
 
 
@@ -79,7 +79,7 @@ For the third trial I added the Kd term which was set to 0.1 while the other two
 video 3 kd too
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2yOHqZwpEz0">
+src="https://www.youtube.com/embed/L9Z9cazYddM">
 </iframe>
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle3.png?raw=true)
@@ -91,7 +91,7 @@ I kept adjusting the parameters by progressively increasing kp, ki, and kd, each
 vid 4 with all working and tweaked
 
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2yOHqZwpEz0">
+src="https://www.youtube.com/embed/eIzzpz8a5vg">
 </iframe>
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle4.jpeg?raw=true)

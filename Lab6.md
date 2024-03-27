@@ -22,9 +22,10 @@ which will be integrated from the gyroscope readings. The set point would be the
 
 I created my own PID control function, which is very similiar to lab 5. It operates by inputting the computed "duty_cycle" into the "difference" variable that will be past along to writeDifferential(), which adjust the speed of the wheels. To calculate the error, it uses the global variable curretn_orientation, which I will explain later, below is my implementation. 
 
-pic pid
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true)
 
-I created updateOrieantion() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. Using the following formula: Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See the function below. 
+I created updateOrientation() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. The following formula is used: 
+Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See my implementation below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true)
 
@@ -48,35 +49,27 @@ Derivative kick happens when a setpoint changes quickly and causes a large spike
 
 ### Results
 
-I started by only focusing on the Kp term and increased it from a veery small value up to 20. At this value, the system responded quickly but seemed to overshoot a bit.  
-
-Video 1 of kp
+I started by only focusing on the Kp term and increased it from a very small value up to 20. At this value, the system responded fairly quickly but seemed to overshoot a bit. Below is the video of my trial and the resulting graphs.   
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/04hKdvyMYvU">
 </iframe>
 
-
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle.png?raw=true)
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed.png?raw=true)
 
-For my second trial I added the Ki term which was set to 0.1 while Kp was kept the same. The car responds quicker but overshoots more, which is expected as the integral term increases overshoot.
-
-video 2 kp and ki
+For my second trial I added the Ki term which was set to 0.1 while Kp was kept at 20. As one can see below, the car responds quicker but overshoots more, which is expected as the integral term increases overshoot.
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/90U-nfSJgQw">
 </iframe>
 
-
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle2.png?raw=true)
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed2.png?raw=true)
 
-For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same. The car still is now pretty stable and responds quickly but overshoots a little bit. 
-
-video 3 kd too
+For the third trial I added the Kd term which was set to 0.1 while the other two were kept the same as previously. The car is still pretty stable and responds quickly but overshoots a little bit. 
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/L9Z9cazYddM">
@@ -86,14 +79,12 @@ src="https://www.youtube.com/embed/L9Z9cazYddM">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed3.png?raw=true)
 
-I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also not that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. Below is my final result.
-
-vid 4 with all working and tweaked
+I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also note that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. I wanted the car to respond as quickly as possible with a small overshoot. So, the final values I decided on was Kd = 35, Ki = 0.004 and Kd = 35. This is demonstrated below in my final result.
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/eIzzpz8a5vg">
 </iframe>
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle4.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6angle4.png?raw=true)
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed4.jpeg?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed4.png?raw=true)

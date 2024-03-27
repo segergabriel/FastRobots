@@ -29,17 +29,17 @@ Angle θ = gyrz * elapsedTime. It's called right before the pid function in my l
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true)
 
-Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the contsrain function here to bound the values. This is shown below. 
+Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the constrain function here to bound the values. This is shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true)
 
-Similiar to lab 5, a if statement in my main loop was established to monitor the IMU for new data availability. When the flag is high and new data was detected, updateorient and pid was called. 
+Similiar to lab 5, an if-statement was established in my main loop to monitor the IMU for new data availability. When the flag is high and new data is detected, updateOrient and orientPid is called. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true)
 
 ### Input Signal and Derivative term
 
-Integrating gyroscope readings as I did in my implementation, is important for accurately determining the robot's orientation. It converts angular velocity measured by the gyroscope into the rotation angle over time and this is important for effective navigation and stability.
+Integrating gyroscope readings as I did in my implementation is important for accurately determining the robot's orientation. It converts angular velocity measured by the gyroscope into the rotation angle over time and this is important for effective navigation and stability.
 
 However, it also introduces challenges like drift and noise accumulation over time. Addressing these might require filtering such as using a Kalman filter to smooth out noise, or increasing the sampling rate for better accuracy. Combining gyroscope data with other sensors like accelerometers, can also provide better estimates. I did not have any extreme bias for my sensors so that is not a problem for now. 
 
@@ -79,7 +79,7 @@ src="https://www.youtube.com/embed/L9Z9cazYddM">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6speed3.png?raw=true)
 
-I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also note that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. I wanted the car to respond as quickly as possible with a small overshoot. So, the final values I decided on was Kd = 35, Ki = 0.004 and Kd = 35. This is demonstrated below in my final result.
+I kept adjusting the parameters by progressively increasing kp, ki, and kd, each time pausing the adjustment when I observed oscillations or undesirable behavior. Also note that for managing rotation, it was important to maintain moderate speeds due to the gyroscope's limitation on the maximum rate of angle change it could accurately measure per reading. I wanted the car to respond as quickly as possible with a small overshoot. The final values I decided on was Kd = 35, Ki = 0.004 and Kd = 35. This is demonstrated below in my final result.
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/eIzzpz8a5vg">

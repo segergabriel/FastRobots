@@ -6,26 +6,27 @@ The goal for this lab is to incorporate a Kalman Filter to help the performance 
 
 ### Estimate Drag and Momentum
 
-The Kalman Filter operates by first predicitng the robot's position using a state space model and then refining this forecast with actual sensor data. See function below.
+The Kalman Filter operates by first predicitng the robot's position using a state space model and then refining this forecast with actual sensor data. See the function below.
 
-pic of formula
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7KF1.png?raw=true)
 
 To identify the A, B, and C matrices necessary for the Kalman Filter, I created a state space model specific to our robot. This model uses the distance between the robot and the wall, which represents our position, and the robot's velocity. See the details of this model below:
 
-pic of matrix
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7KF2.png?raw=true)
 
-To estimate drag and momentum I used the following:
+To estimate drag (d) and momentum (m) I used the following two formulas:
 
-pic of d and m 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7d.png?raw=true)
 
-I used a constant step response experiment towards a wall, setting the PWM value to 200. This approach generated the following data:
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7m.png?raw=true)
+
+Then, a constant step response experiment towards a wall was used, with a PWM value of 200. This approach generated the following data:
 
 pic of graph
 
-Looking at the graph we can see that the speed reaches steady state at a derivative of about 22613mm/s
+Looking at the graph we can see that the speed reaches steady state at a derivative of about 
 
 calculations for d and m and matrices
-
 
 
 ### Initialize Kalman Filter
@@ -40,11 +41,15 @@ vars
 
 calculations
 
-Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and my created matrix is shown below. 
-
-code
-
-grpah of KL
 
 ### Implement and test your Kalman Filter in Jupyter
 
+Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and my created matrix is shown below. 
+
+pic of code
+
+pic of matrix
+
+grpah of KL
+
+The Kalman Filter effectively follows the pattern of the data and accurately predict the subsequent TOF measurement. A sampling rate of 100ms was used, aligning it with the sensor's sampling frequency.

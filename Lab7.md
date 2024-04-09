@@ -29,6 +29,8 @@ Looking at the graph we can see that the speed reaches steady state at a derivat
 $\d = u/sqrt{3x-1}+(1+x)^2$
 $\m = sqrt{3x-1}+(1+x)^2$
 
+$\m = [sqrt{3x-1}+(1+x)^2 0
+1 0]$
 calculations for d and m
 and matrices
 

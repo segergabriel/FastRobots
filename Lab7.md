@@ -46,11 +46,23 @@ formula and calc
 
 Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
-$\sigma = f$
 
-$\Sigma (z) = f$
 
-calculations
+$\Sigma (z) = [\sigma (z)ˆ2]$
+
+$\sigma (z) = \sigma (ToF) = 20mm$
+
+And, 
+
+$\sigma (x) = \sigma (u) = 10$
+
+So we have, 
+
+$\Sigma (z) = [20ˆ2]
+
+$\Sigma (u) = [10ˆ2 0, 
+              0 10ˆ2]
+
 
 
 ### Implement and test your Kalman Filter in Jupyter

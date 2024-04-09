@@ -30,7 +30,9 @@ $d = u/2200mm/s = 0.00045$
 
 $m = 0.00045 * 1s /ln(0.1) = 0.000195$
 
-Matrices
+And my matrices then become the following:
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7abc.png?raw=true)
 
 
 ### Initialize Kalman Filter
@@ -42,10 +44,8 @@ To discretize the matrices I previously calculated, it was necessary to select a
 So my matrices are now the following:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7ad.png?raw=true)
-formula and calc
 
 Then, I had to estimate the noise variables, sigma_u and sigma_z.
-
 
 $\Sigma (z) = [\sigma (z)ˆ2]$
 
@@ -59,9 +59,8 @@ So we have,
 
 $\Sigma (z) = [20ˆ2]$
 
-$\Sigma (u) = [10ˆ2 0, 
-              0 10ˆ2]$
-
+$\Sigma (u) = [10ˆ2, 0; 
+              0, 10ˆ2]$
 
 
 ### Implement and test your Kalman Filter in Jupyter

@@ -53,14 +53,14 @@ $\sigma (z) = \sigma (ToF) = 20mm$
 
 And, 
 
-$\sigma (x) = \sigma (u) = 10$
+$\sigma (x) = \sigma (u) = 100$
 
 So we have, 
 
 $\Sigma (z) = [20ˆ2]$
 
-$\Sigma (u) = [10ˆ2, 0; 
-              0, 10ˆ2]$
+$\Sigma (u) = [100ˆ2, 0; 
+              0, 100ˆ2]$
 
 
 ### Implement and test your Kalman Filter in Jupyter

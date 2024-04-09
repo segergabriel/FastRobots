@@ -26,31 +26,29 @@ pic of graph
 
 Looking at the graph we can see that the speed reaches steady state at a derivative of about xm/s. And the 90% rise time was about 1s. So we have,
 
-$\d = u/sqrt{3x-1}+(1+x)^2$
+$d = u/2200mm/s = 0.00045$
 
-$\m = sqrt{3x-1}+(1+x)^2$
+$m = 0.00045 * 1s /ln(0.1) = 0.000195$
 
-$`\sqrt{3x-1}+(1+x)^2`$
+Matrices
 
-
-$\m = [sqrt{3x-1}+(1+x)^2 0
-1 0]$
-calculations for d and m
-and matrices
-
-
-**The Cauchy-Schwarz Inequality**
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 
 ### Initialize Kalman Filter
 
 To discretize the matrices I previously calculated, it was necessary to select a specific sampling rate for predicting filter values. I used a sampling rate of 20ms. The formula is as follows:
 
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true)
+
+So my matrices are now the following:
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7ad.png?raw=true)
 formula and calc
 
 Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
-vars
+$\sigma = f$
+
+$\sigmaz = f$
 
 calculations
 

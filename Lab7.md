@@ -48,7 +48,7 @@ Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
 $\sigma = f$
 
-$\sigmaz = f$
+$\Sigma (z) = f$
 
 calculations
 

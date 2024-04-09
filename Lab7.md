@@ -30,6 +30,9 @@ $\d = u/sqrt{3x-1}+(1+x)^2$
 
 $\m = sqrt{3x-1}+(1+x)^2$
 
+$`\sqrt{3x-1}+(1+x)^2`$
+
+
 $\m = [sqrt{3x-1}+(1+x)^2 0
 1 0]$
 calculations for d and m

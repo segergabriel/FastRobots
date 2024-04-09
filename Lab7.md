@@ -20,13 +20,16 @@ To estimate drag (d) and momentum (m) I used the following two formulas:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7m.png?raw=true)
 
-Then, a constant step response experiment towards a wall was used, with a PWM value of 200. This approach generated the following data:
+A constant step response experiment towards a wall was used to find d and m, with a PWM value of 200. This approach generated the following data:
 
 pic of graph
 
-Looking at the graph we can see that the speed reaches steady state at a derivative of about 
+Looking at the graph we can see that the speed reaches steady state at a derivative of about xm/s. And the 90% rise time was about 1s. So we have,
 
-calculations for d and m and matrices
+
+
+calculations for d and m
+and matrices
 
 
 ### Initialize Kalman Filter

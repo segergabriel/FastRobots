@@ -27,6 +27,7 @@ pic of graph
 Looking at the graph we can see that the speed reaches steady state at a derivative of about xm/s. And the 90% rise time was about 1s. So we have,
 
 $\d = u/sqrt{3x-1}+(1+x)^2$
+
 $\m = sqrt{3x-1}+(1+x)^2$
 
 $\m = [sqrt{3x-1}+(1+x)^2 0

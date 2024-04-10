@@ -1,4 +1,4 @@
-### Kalman
+## Lab 7: Kalman Filter
 
 ### Lab Objective
 
@@ -28,10 +28,6 @@ Looking at the graph we can see that the speed reaches steady state at a derivat
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7math.png?raw=true)
 
-$d = u/2200mm/s = 0.00045$
-
-$m = 0.00045 * 1s /ln(0.1) = 0.000195$
-
 And my matrices then become the following:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7abc.png?raw=true)
@@ -51,23 +47,7 @@ Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7math2.png?raw=true)
 
-$\Sigma (z) = [\sigma (z)ˆ2]$
-
-$\sigma (z) = \sigma (ToF) = 20mm$
-
-And, 
-
-$\sigma (x) = \sigma (u) = 100$
-
-So we have, 
-
-$\Sigma (z) = [20ˆ2]$
-
-$\Sigma (u) = [100ˆ2, 0; 
-              0, 100ˆ2]$
-
-
-### Implement and test your Kalman Filter in Jupyter
+### Implement and test the Kalman Filter in Jupyter
 
 Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and my created matrix is shown below. 
 

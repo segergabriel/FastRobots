@@ -20,11 +20,11 @@ To estimate drag (d) and momentum (m) I used the following two formulas:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7m.png?raw=true)
 
-A constant step response experiment towards a wall was used to find d and m, with a PWM value of 200. This approach generated the following data:
+For the step response, the car was driven at a constant speed towards a wall to find steady-state velocity, d and m, with a PWM value of 200. The 90% rise time, representing the time it takes for the car to reach 90% of the steady state velocity was also determined. This approach generated the following data:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7fig1.png?raw=true)
 
-Looking at the graph we can see that the speed reaches steady state at a derivative of about xm/s. And the 90% rise time was about 1s. So we have,
+The 90% step time required finding the time at which the car reaches 2200mm/s * 0.9 = 1980 mm/s. And the 90% rise time is around 1s. So we have,
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7math.png?raw=true)
 
@@ -32,6 +32,7 @@ And my matrices then become the following:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7abc.png?raw=true)
 
+Note that the C matrix was initialized as C = [-1, 0], same as in lecture because we are measuring negative distance from the wall.
 
 ### Initialize Kalman Filter
 
@@ -49,12 +50,10 @@ Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
 ### Implement and test the Kalman Filter in Jupyter
 
-Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and my created matrix is shown below. 
+Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and added my created matriced. This implementation and the result is shown below. 
 
-pic of code
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7code.png?raw=true)
 
-pic of matrix
-
-grpah of KL
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7est.png?raw=true)
 
 The Kalman Filter effectively follows the pattern of the data and accurately predict the subsequent TOF measurement. A sampling rate of 100ms was used, aligning it with the sensor's sampling frequency.

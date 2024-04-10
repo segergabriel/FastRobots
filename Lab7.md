@@ -22,9 +22,11 @@ To estimate drag (d) and momentum (m) I used the following two formulas:
 
 A constant step response experiment towards a wall was used to find d and m, with a PWM value of 200. This approach generated the following data:
 
-pic of graph
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7fig1.png?raw=true)
 
 Looking at the graph we can see that the speed reaches steady state at a derivative of about xm/s. And the 90% rise time was about 1s. So we have,
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7math.png?raw=true)
 
 $d = u/2200mm/s = 0.00045$
 
@@ -46,6 +48,8 @@ So my matrices are now the following:
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7ad.png?raw=true)
 
 Then, I had to estimate the noise variables, sigma_u and sigma_z.
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7math2.png?raw=true)
 
 $\Sigma (z) = [\sigma (z)ˆ2]$
 

@@ -50,7 +50,7 @@ Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
 ### Implement and test the Kalman Filter in Jupyter
 
-Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and added my created matriced. This implementation and the result is shown below. 
+Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and added my created matrices. This implementation and the yielded result is shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7code.png?raw=true)
 

@@ -11,3 +11,4 @@ Welcome to my Fast Robots webpage. This page will contain all the labs that I wi
 * [Lab 5: Linear PID control and Linear interpolation](./Lab5.md)
 * [Lab 6: Orientation Control](./Lab6.md)
 * [Lab 7: Kalman Filter](./Lab7.md)
+* [Lab 8: Stunts](./Lab8.md)

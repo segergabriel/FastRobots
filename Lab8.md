@@ -37,4 +37,10 @@ The videos below shows that my stunt is working well. The robot travels fast and
 
 videos
 
-And here are the data that was collected. tof and orientation
+And here is the data for the angles that were collected.
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8angle1.png?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8angle2.png?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8angle3.png?raw=true)

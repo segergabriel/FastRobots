@@ -12,25 +12,28 @@ I'm not using the Kalman filter to estimate the distance but I am using linear i
 
 ### Implementation
 
-The task is divided ito different sections.
+The task is divided into four different sections.
 
-1. Drive fast forward until 3 feet from the wall.
+1. Drive fast forward until the robot is 3 feet from the wall.
 2. Quickly turn the car 180 degrees.
 3. Drive back to the starting line.
-4. Send data.
+4. Send data over Bluetooth.
 
-To accomplish this a new task "STUNT" was created, see below.
+To accomplish this a new case "STUNT" was created, see this below.
 
-pic of Stunt
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8stunt.png?raw=true)
 
-Flags are still being used 
+Below is the logic of my main loop as well as the "doStunt" function. These were the two main components of the implementation. Additional functions worked as helper functions. Notice that "doStunt" is getting called right away from the loop. When the desired position is reached, it calls the reverse funciton which activates my orientation PID. Finally, the car accelerates back from where it came from. 
 
-pic of dostunt
-pic of main loop when done
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8loop.png?raw=true)
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8dostunt.png?raw=true)
+
+Two main challenges arose when completing this lab. The first one was to set flagsa at the right time and make sure different functions and cases didn't block each other. One example is when I tried to turn the car I had some issues. Most of these were solved by creating a "STUNT_RUN" flag and setting it to false when I needed to use the orientation control. The second issue involved in getting the car to turn exactly 180 degrees and do so fast. Because I wanted minimum delay the car span a little bit even after it was supposed to be done turning. This was solved by testing the right delay times and having it stop turn a little before reaching 180 degrees. 
 
 ### Results
 
-The videos below shows that my stunt is working well. The robot travels fast and initiates the turn at the right distance before driving back to the starting line. 
+The videos below shows that my stunt is working well. The robot travels fast and initiates the turn at the right distance before quickly driving back to the starting line. 
 
 videos
 

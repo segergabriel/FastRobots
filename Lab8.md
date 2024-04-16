@@ -35,9 +35,15 @@ Two main challenges arose when completing this lab. The first one was to set fla
 
 The videos below shows that my stunt is working well. The robot travels fast and initiates the turn at the right distance before quickly driving back to the starting line. 
 
-videos
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/aCwjjnbXuHA">
+</iframe>
 
-And here is the data for the angles that were collected.
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/k-J3iqWiaH4">
+</iframe>
+
+And here is the collected data of the change in angle over the run.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8angle1.png?raw=true)
 

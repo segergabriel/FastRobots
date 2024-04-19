@@ -6,11 +6,11 @@ The objective of this lab is to construct a two-dimensional map of a static envi
 
 ### Overview 
 
-The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, from a hardware perspective, the robot is ready to execute all the required tasks for this lab. The remaining work involves software programming. The first task involves programming the robot to rotate in place with precise and small increments. Then, the robot will  record data from the ToF sensor along with the gyroscope's orientation at each of these increments. 
+The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, from a hardware perspective, the robot is ready to execute all the required tasks for this lab. The work for this lab therefore involves software programming. The first task involves programming the robot to rotate in place with precise and small increments. Then, the robot will  record data from the ToF sensor along with the gyroscope's orientation at each of these increments. 
 
 ### Implementation
 
-Becasue I have already implemented orientation control,the controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. Below is a code snippet that demonstrates how this is achieved.
+Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. Below is a code snippet that demonstrates how this is achieved.
 
 pic of ovrview code, loop case and turn 
 
@@ -34,7 +34,7 @@ The map is based on a grid, with each square tile being one grid cell. The robot
 
 pic of one spot
 
-In order to collect data the robot takes a time of flight measurement when the robot is at a set point as well as every time orientPid() is called. It also collects the current orientation from the IMU. It repeats this until it has turned over 360 degrees. Finally, the I send the data over in the same way as previous labs. 
+In order to collect data the robot takes a ToF measurement when the robot is at a set point as well as every time orientPid() is called. It also collects the current orientation from the IMU. It repeats this until it has turned over 360 degrees. Finally, I send the data over Bluetooth in the same way as previous labs. 
 
 ### Plotting Data
 
@@ -48,18 +48,21 @@ The collected data comprises the orientation and the distance measurements, whic
 
 pic of conversion
 
-talk about transformation maybe
+Below are the cartesian plots for each spot. 
+
+pic of cartesian cords
+
+And finally I merged them together which created the following map: maybe talk ab how this was done
 
 pic of merged map
 
 ### Line Based Map
 
-rewrite this
-To make modeling easier, a line-based map was constructed by manually drawing lines on the integrated map and noting the start and end points of each line. Below, the line-based map is superimposed on the merged map to illustrate this method.
+In order to use this data in the simulator later, we needed to construct a line-based map. This was done by manually estimate the walls and obstacles based on our plots and drawing lines on the merged map. See this map below.
 
 pic of line based
 
-maybe data points
+Finally,two lists containing the end points of these lines were saved. See these below. 
 
 
 

@@ -8,7 +8,7 @@ mobile robot is located with respect to its environment.
 
 Every iteration of the Bayes filter has two steps, the algorithm I will be using is shown below.
 
-pic of bayes algo
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/10algo.png?raw=true)
 
 Note that the prediction step increases uncertainty in the belief while the update step reduces uncertainty.
 

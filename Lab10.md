@@ -50,3 +50,4 @@ In the update step, the robot computes the belief for each grid cell by multiply
 
 ### Simulation
 
+The Bayes Filter's was tested using the given simulator, where odometry data is shown in red, the ground truth in green, and the robot's estimated position in blue. Consistency between the ground truth and the robot's belief was observed over multiple runs. This indicates that the Bayes Filter is pretty effectively localizing the robot within the simulated environment.

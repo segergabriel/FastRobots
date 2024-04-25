@@ -10,6 +10,9 @@ Every iteration of the Bayes filter has two steps, the algorithm I will be using
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/10algo.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10algo.png?raw=true" width="500" height="300">
+
+
 Note that the prediction step increases uncertainty in the belief while the update step reduces uncertainty.
 
 ### Grid Localization

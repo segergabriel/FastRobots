@@ -68,7 +68,7 @@ And below is the polar plot images and the cartesian plots in order for each loc
 
 Finally I merged them together which reulted in the following map. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/8map.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9map.png?raw=true)
 
 The map looks good and correct, some data points far away aren't accurate but that is to be expected. 
 
@@ -76,7 +76,7 @@ The map looks good and correct, some data points far away aren't accurate but th
 
 In order to use this data in the simulator later, we needed to construct a line-based map. This was done by manually estimate the walls and obstacles based on our plots and drawing lines on the merged map. See this map below.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9linebased.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9linemap.png?raw=true)
 
 Finally,two lists containing the end points of these lines were saved. See these below. 
 

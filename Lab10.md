@@ -50,4 +50,12 @@ In the update step, the robot computes the belief for each grid cell by multiply
 
 ### Simulation
 
-The Bayes Filter's was tested using the given simulator, where odometry data is shown in red, the ground truth in green, and the robot's estimated position in blue. Consistency between the ground truth and the robot's belief was observed over multiple runs. This indicates that the Bayes Filter is pretty effectively localizing the robot within the simulated environment.
+The Bayes Filter's was tested using the given simulator, where odometry data is shown in red, the ground truth in green, and the robot's estimated position in blue. The ground truth and the robot's belief was consistent over multiple runs. This indicates that the Bayes Filter is pretty effectively localizing the robot within the simulated environment. Below is one photo of a run followed by a video of my final simulation. 
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/10sensor.png?raw=true)
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/XkgqxqXsHP8">
+</iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XkgqxqXsHP8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

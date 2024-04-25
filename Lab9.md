@@ -12,13 +12,9 @@ The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, f
 
 Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. To implement this new case was created and some slight modifications were made to the main loop, involving setting flags and calling the turn() function. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by 10 degrees. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" width="530" height="300">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" width="500" height="300">
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true" width="530" height="300">
 
 The video below shows that my car is incrementing precisely and with good speed. It is also turning in place without much shifting and minimal oscillation or overshoot. So, my PID control and implementation is working well.
 
@@ -41,6 +37,8 @@ The physical setup of the map is shown below.
 The map is based on a grid, with each square tile being one grid cell. The robot will be collecting data in 5 designated spots, which are in feet: (5,-3), (5,3), (-3,-2), and (0,3) from the origin. The picture below shows one such spot.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9spot.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9spot.png?raw=true" width="480" height="300">
 
 In order to collect data the robot takes a ToF measurement when the robot is at a set point as well as every time orientPid() is called. It also collects the current orientation from the IMU and repeats this until it has turned 360 degrees. Finally, I send the data over Bluetooth in the same way as previous labs. 
 

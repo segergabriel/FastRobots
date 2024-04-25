@@ -16,6 +16,10 @@ Because I have already implemented orientation control, controlling the robot's 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" width="500" height="300">
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true" width="500" height="300">
+
 The video below shows that my car is incrementing precisely and with good speed. It is also turning in place without much shifting and minimal oscillation or overshoot. So, my PID control and implementation is working well.
 
 <iframe width="420" height="315"

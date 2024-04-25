@@ -32,7 +32,7 @@ kd = 10;
 
 The physical setup of the map is shown below.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9room1.png?raw=true)
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9room2.png?raw=true)
 
 The map is based on a grid, with each square tile being one grid cell. The robot will be collecting data in 5 designated spots, which are in feet: (5,-3), (5,3), (-3,-2), and (0,3) from the origin. The picture below shows one such spot.
 

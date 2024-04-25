@@ -10,7 +10,7 @@ The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, f
 
 ### Implementation
 
-Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. A new case was created and some slight modifications were made to the main loop. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by 10 degrees. 
+Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. To implement this new case was created and some slight modifications were made to the main loop, involving setting flags and calling the turn() function. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by 10 degrees. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true)
 
@@ -38,11 +38,11 @@ The map is based on a grid, with each square tile being one grid cell. The robot
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9spot.png?raw=true)
 
-In order to collect data the robot takes a ToF measurement when the robot is at a set point as well as every time orientPid() is called. It also collects the current orientation from the IMU and repeats this until it has turned over 360 degrees. Finally, I send the data over Bluetooth in the same way as previous labs. 
+In order to collect data the robot takes a ToF measurement when the robot is at a set point as well as every time orientPid() is called. It also collects the current orientation from the IMU and repeats this until it has turned 360 degrees. Finally, I send the data over Bluetooth in the same way as previous labs. 
 
 ### Plotting Data and Merging Data
 
-As I am using orientation PID control, I will need to trust the orientation from the integrated gyroscope values. Since the robot performs rotations in place and measures distances to walls, it is beneficial to do quick visual checks using polar plots. These plots provide a clear visual representation of the measurements taken at each designated spot. 
+As I am using orientation PID control, I will need to trust the orientation from the integrated gyroscope values. Since the robot performs rotations in place and measures distances to walls, it is beneficial to do quick visual checks using polar plots. These plots provide a clear visual representation of the measurements taken at each designated spot. My car seem to rotate around 10 degrees to much but by looking at the plots I still believe that the map will come out accurate.  
 
 The collected data comprises the orientation and the distance measurements, which are represented in polar coordinates (rho, phi). To convert the data into a global frame, this data needs to be converted into Cartesian coordinates. The following code snippet handles this.
 

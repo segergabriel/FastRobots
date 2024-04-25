@@ -1,4 +1,4 @@
-### Mapping
+## Mapping
 
 ### Lab Objective
 
@@ -78,9 +78,24 @@ In order to use this data in the simulator later, we needed to construct a line-
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/9linemap.png?raw=true)
 
-Finally,two lists containing the end points of these lines were saved. See these below. 
+Finally, the list containing the end points of these lines were saved. See these below. 
 
-
+| Description | Start coordinate (mm) |End coordinate (mm)|
+| --- | --- |
+| South | (-1600, -1400) |(-200, -1400)|
+| | (-200, -1400) |(-200, -1000)|
+| | (-200, -1000) | (200, -1400) |
+| | (200, -1000) | (200, -1400) |
+| | (200, -1400) | (2000, -1400) |
+| East | (2000, -1400) | (2000, 1400) |
+| North | (-800, 1400) | (2000, 1400) |
+| West | (-800, 1400) | (-800, 0) |
+| | (-800, 0) | (-1600, 0) |
+| | (-1600, 0) | (-1600, -1400) |
+| Box | (1400, 0) | (1400, 500) |
+| | (1400, 0) | (800, 0) |
+| | (800, 0) | (800, 500) |
+| | (800, 0) | (1400, 500) |
 
 
 

@@ -40,13 +40,13 @@ The calculated probabilities were then used to predict the robot's position. I h
 
 This function is important for the update step because it computes the probability of each sensor measurement using a Gaussian model and reduces the uncertainty in the robot's position. See below.
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10sensor.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10sensor.png?raw=true" width="500" height="150">
 
 ### Update Step
 
 In the update step, the robot computes the belief for each grid cell by multiplying the predicted belief by the probability derived from the sensor measurements. This product forms the updated belief for each grid cell. These beliefs are normalized to ensure that they together form a valid probability distribution. See my implementation below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10update.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10update.png?raw=true" width="500" height="150">
 
 ### Simulation
 

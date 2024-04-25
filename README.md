@@ -13,4 +13,5 @@ Welcome to my Fast Robots webpage. This page will contain all the labs that I wi
 * [Lab 7: Kalman Filter](./Lab7.md)
 * [Lab 8: Stunts](./Lab8.md)
 * [Lab 9: Mapping](./Lab9.md)
-* [Lab 10: Grid Localization](./Lab10.md)
+* [Lab 10: Localization (Sim)](./Lab10.md)
+* [Lab 11: Localization (Real)](./Lab11.md)

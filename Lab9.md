@@ -81,7 +81,7 @@ In order to use this data in the simulator later, we needed to construct a line-
 Finally, the list containing the end points of these lines were saved. See these below. 
 
 | Description | Start coordinate (mm) |End coordinate (mm)|
-| --- | --- |
+| --- | --- || --- |
 | South | (-1600, -1400) |(-200, -1400)|
 | | (-200, -1400) |(-200, -1000)|
 | | (-200, -1000) | (200, -1400) |

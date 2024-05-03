@@ -6,14 +6,16 @@ Last lab I demonstrated the effectiveness of the Bayes filter in a simulation. I
 
 ### Bayes Filter Simulation
 
-Three files where provided to us to help us accomplishing this lab: [lab11_sim.ipynb](https://github.com/CEI-lab/FastRobots-lab11/blob/main/lab11_sim.ipynb), [lab11_real.ipynb](https://github.com/CEI-lab/FastRobots-lab11/blob/main/lab11_real.ipynb) and localization_extras.py.
+Three files where provided to us to help us accomplishing this lab: [lab11_sim.ipynb](https://github.com/CEI-lab/FastRobots-lab11/blob/main/lab11_sim.ipynb), [lab11_real.ipynb](https://github.com/CEI-lab/FastRobots-lab11/blob/main/lab11_real.ipynb) and [localization_extras](https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py).
   - The lab11_sim.ipynb file is a Jupyter notebook that provides skeleton code to integrate the real robot with the localization code.
   - The lab11_real.ipynb file is a Jupyter notebook that demonstrates the Bayes filter implementation on the virtual robot.
   - localization_extras.py provides a fully-functional localization module that works on the virtual robot.
 
 
-https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py
+
 [localization_extras](https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py)
+
+
 [localization_extras.py](https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py)
 
 

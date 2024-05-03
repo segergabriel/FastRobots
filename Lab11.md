@@ -11,14 +11,6 @@ Three files where provided to us to help us accomplishing this lab: [lab11_sim.i
   - The lab11_real.ipynb file is a Jupyter notebook that demonstrates the Bayes filter implementation on the virtual robot.
   - localization_extras.py provides a fully-functional localization module that works on the virtual robot.
 
-
-
-[localization_extras](https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py)
-
-
-[localization_extras.py](https://github.com/CEI-lab/FastRobots-lab11/blob/main/localization_extras.py)
-
-
 Our first task was to test localization in simulation again, but this time with the code given to us instead of our own implementation from lab 10. I did this by running the simulation notebook. The result is shown below. 
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/10sim.png?raw=true" width="500" height="350">

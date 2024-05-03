@@ -15,4 +15,6 @@ Last lab I demonstrated the effectiveness of the Bayes filter in a simulation. I
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/11spot1.png?raw=true" width="500" height="400">
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10spot2.png?raw=true" width="500" height="450">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/11spot2.png?raw=true" width="500" height="370">
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/11spot3.png?raw=true" width="500" height="450">

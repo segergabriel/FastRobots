@@ -2,11 +2,20 @@
 
 ### Lab Objective
 
+Last lab I demonstrated the effectiveness of the Bayes filter in a simulation. In this lab I will perform localization with the Bayes filter on the actual robot. Only the update step of the Bayes filter will be used as the motion is very noisy and therefore the  prediction step will not be helpful.
 
-Last lab I demonstrated the effectiveness of the Bayes filter in a simulation. In this lab I will perform localization with the Bayes filter on the actual robot. Only the update step of the Bayes filter will be used as the motion is very noisy and the prediction step will therefore not be helpful.
+### Bayes Filter Simulation
 
-### Bayes Filter (Sim)
+Three files where provided to us to help us accomplishing this lab: lab11_sim.ipynb, lab11_real.ipynb and localization_extras.py.
+  - The lab11_sim.ipynb file is a Jupyter notebook that provides skeleton code to integrate the real robot with the localization code.
+  - The lab11_real.ipynb file is a Jupyter notebook that demonstrates the Bayes filter implementation on the virtual robot.
+  - localization_extras.py provides a fully-functional localization module that works on the virtual robot.
 
+[sim](https://github.com/CEI-lab/FastRobots-lab11/blob/main/lab11_sim.ipynb)
+
+Our first task was to test localization in simulation again, but this time with the code given to us instead of our own implementation from lab 10. I did this by running the simulation notebook. The result is shown below. 
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/10sim.png?raw=true" width="500" height="350">
 
 ### Bayes Filter (Real)
 

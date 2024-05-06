@@ -19,12 +19,9 @@ Our first task was to test localization in simulation again, but this time with 
 
 The localization was done in Python, with the students being given an optimized Bayes filter. The focus of the implementation on the robot was to be able to rotate on its axis and get accurate Time of Flight sensor data. This is similar to lab 9, where the robot rotated on its own axis in order to map its surroundings. Because of this, the PID controller was already optimized for rotating on its axis. The code below shows the connection between the robot and Python:
 
-
-
 We were given an optimized Bayes filter, which was was used in Python for the localization process. The primary objective was to enable the robot to rotate precisely on its axis and gather Time of Flight sensor readings. This task is similiar to lab 9, where the focus was to map the environment. So, the PID controller was already optimized for rotating and gather readings and I therefore reused that code. We had to implement this within the perform_observation_loop() function, which is a part of the RealRobot() class. When this function is called, the robot will rotate a full rotation, and output a numpy array of ToF distance values and angular position values. I decided to modify my notification handler from previous labs and use that to interpret the bluetooth values. Note that I also used the asyncio function so that the script will wait for the robot to finish its spin before proceeding. See my code below. 
 
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/11code.png?raw=true" width="500" height="700">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/11code.png?raw=true" width="500" height="400">
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/11not.png?raw=true" width="500" height="700">
 

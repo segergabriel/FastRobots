@@ -67,8 +67,6 @@ In the video one can see that the implementation works well until later on when 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q9PnoNT76YM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-https://www.youtube.com/shorts/Q9PnoNT76YM
-
 ### Acknowledgements
 
 I want to thank all the TAs in this course for all their hard work and help during this semester. I want to give extra thanks to Rafi, who was super helpful throughout the course and made sure to have extra lab hours multiple times a week. 

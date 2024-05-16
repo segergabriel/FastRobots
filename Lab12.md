@@ -16,23 +16,23 @@ which we will use in the next steps.
 After we have localized the position, the task is to turn the car to the right angle. I'm using my orient PID control to turn the car to the desired value by tracking its angular position by integrating the angular velocity from the gyroscope and stop once the 
 desired angle is reached. Exactly how this value is calculated is shown below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="500" height="100">
 atan
 
 After we succesfully turned the car so it faces the next waypoint, the next task is to move it forward to the waypoint. 
 
 To move the car, a function was created to stop the car after it has traveled the desired distance. So, a setpoint was calculated by subtracting the desired travel distance from the current frontal ToF sensor reading. When the new ToF sensor reading is less or equal to the initial reading, it indicates that the car has reached the desired postition. After determining the setpoint, the car behaves similar as in Lab 7, using a PID controller to reach the setpoint. Below I show how the desired distance is calculated depending on the values transfered from the localization step. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12des.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12des.png?raw=true" width="500" height="100">
 desired
 
 And below the function nextPoint() is demonstrated, which handles most of the logic for these three tasks. It's also important to note that much of my design relies on previous implementations of PID controllers and functions from previous labs. However, these flags and functions are activated or called from this function. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12next.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12next.png?raw=true" width="500" height="300">
 
 Below I also included some of my logic from the main loop. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12pid.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12pid.png?raw=true" width="500" height="300">
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/12orient.png?raw=true" width="500" height="400">
 
@@ -51,7 +51,7 @@ issue was the handling trasnfer of data. My issue here was first connected to us
 points which confused the robots belief of its position. However, there was one issue I spent hours on and unfortunately I ran out of time and couldn't fix it. It had to do with how the values I sent over bluetooth was stored in my arduino code, 
 currentY and goalY for example. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12curY.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12curY.png?raw=true" width="500" height="300">
 
 As shown, the right values were transfered and could succesfully be used to calculate the angle the car should turn. The problem was that these values reset to zero after they were used in "step1" of nextPoint(), so when the desired position to travel were calculuted it always came out to zero as well. After getting helped and trying to debug this problem without any clear solution, I decided to hardcode the distance the car should travel for each waypoint. It worked pretty well but it was frustrating as
 I really wanted my robot to be fully able to navigate through the maze by itself. This also lead to complications for later waypoints. For example, if the localization and turning of the car wasn't exactly correct, it didn't have a chance to fix itself, as my code moved on to driving the car for a set distance in the following step. I also noticed that depending on the battery, the car traveled a different distance. 

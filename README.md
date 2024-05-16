@@ -15,3 +15,4 @@ Welcome to my Fast Robots webpage. This page will contain all the labs that I wi
 * [Lab 9: Mapping](./Lab9.md)
 * [Lab 10: Localization (Sim)](./Lab10.md)
 * [Lab 11: Localization (Real)](./Lab11.md)
+* [Lab 12: Planning and Execution](./Lab12.md)

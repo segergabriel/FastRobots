@@ -92,8 +92,8 @@ For this task, an additional array was created with the timestamp array on the A
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true" width="500" height="400">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true" width="500" height="300">
 
 ### Discussion

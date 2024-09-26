@@ -37,15 +37,14 @@ The bluetooth software used in this course was compatible with my mac. So, it wa
 ### Configurations
 Next, I connected the Artemis Board to the Python code. This was achieved by uploading the provided ble_arduino.ino file to the Artemis, which resulted in the MAC address being updated to c0:89:25:6d:b0:4b, as depicted in the figure below.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true)
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true" width="500" height="300">
 
 I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was important for enabling the Python code to detect and establish a connection with the Artemis. The second step involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. Therefore, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true" width="500" height="250">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true" width="500" height="250">
 
 ### Echo
 To verify the connection between the Artemis board and the computer, I executed some commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below

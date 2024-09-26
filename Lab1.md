@@ -49,16 +49,13 @@ I also modified the MAC address in the Python script within the connection.yaml 
 ### Echo
 To verify the connection between the Artemis board and the computer, I executed some commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true)
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true" width="500" height="300">
 
 The following command is used in Python:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echojup.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/echojump.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true" width="400" height="100">
 
 ### GET_TIME_MILLIS
 The next command focused on obtaining the current time from the Artemis board. This required utilizing the millis() function from the Arduino library. The value obtained from millis() was then converted into a double data type, and then formatted into a string. This string representation of the current time was then transmitted to the Python script. The relevant segment of the Arduino code is below:

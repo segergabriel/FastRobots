@@ -15,14 +15,12 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 ### Serial Example
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the image below.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true" width="500" height="300">
 
 ### Analogread Example
 In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy, I quickly placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 31.95 to 31.99 degrees Celsius.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true)
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true" width="500" height="300">
 
 ### Microphone Output Example
 In this example, we wanted ot find the loudest frequency using the microphone. The video below show the results. 
@@ -99,12 +97,20 @@ To collect and transmit timestamp data from the Artemis board to my laptop, a gl
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true" width="500" height="300">
+
 ### Get Temperature
 For this task, an additional array was created with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true" width="500" height="300">
 
 ### Discussion
 The two methods handle data collection and transmission in different ways. The first method captures the current time at set intervals and immediately sending this information. This approach is advantageous for real-time monitoring as it allows immediate action based on the received data. However, it can hinder the BLE connection due to the constant data flow and may lead to inefficiencies in bandwidth usage due to the potential overhead of sending small packets of data frequently.

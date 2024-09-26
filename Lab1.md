@@ -77,21 +77,12 @@ I created a loop on the Artemis board to capture the current time in millisecond
 ### Send Time
 To collect and transmit timestamp data from the Artemis board to my laptop, a global array was created. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead. Below is the use code.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="150">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="350">
-
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true" width="300" height="100">
 
 ### Get Temperature
 For this task, an additional array was created with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.
-
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/tempRes.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempArd.png?raw=true" width="500" height="400">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/tempJup.png?raw=true" width="500" height="400">

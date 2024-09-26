@@ -77,12 +77,13 @@ I created a loop on the Artemis board to capture the current time in millisecond
 ### Send Time
 To collect and transmit timestamp data from the Artemis board to my laptop, a global array was created. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead. Below is the use code.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="150">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="350">
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
+
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true" width="300" height="100">
 
 ### Get Temperature

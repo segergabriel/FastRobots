@@ -16,11 +16,13 @@ src="https://www.youtube.com/embed/J3cUdux_d7M">
 For this example, the goal was to evaluate the performance of the serial monitor output. During this test, the Arduino was programmed to transmit a numerical sequence to the serial monitor. Additionally, it was set up to enable user interaction, where the user could input data into the serial monitor. The Artemis Board was then tasked with reading this input and displaying it back onto the serial monitor. The process and its results are illustrated in the image below.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/serialExample.png?raw=true" width="500" height="300">
 
 ### Analogread Example
 In the third experiment, the focus was on the temperature sensor. The temperature readings were relayed to the serial monitor in millidegrees Celsius. To verify the accuracy, I quickly placed my hand over the Artemis board, which resulted in a slight temperature rise, as indicated by the readings changing from 31.95 to 31.99 degrees Celsius.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/analog.png?raw=true" width="500" height="300">
 
 ### Microphone Output Example
 In this example, we wanted ot find the loudest frequency using the microphone. The video below show the results. 
@@ -37,41 +39,58 @@ The bluetooth software used in this course was compatible with my mac. So, it wa
 ### Configurations
 Next, I connected the Artemis Board to the Python code. This was achieved by uploading the provided ble_arduino.ino file to the Artemis, which resulted in the MAC address being updated to c0:89:25:6d:b0:4b, as depicted in the figure below.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/advert1.png?raw=true" width="500" height="300">
 
 I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was important for enabling the Python code to detect and establish a connection with the Artemis. The second step involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. Therefore, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true" width="500" height="300">
+
 ### Echo
 To verify the connection between the Artemis board and the computer, I executed some commands, starting with the ECHO command. This command involved sending a string of characters from the Python code to the Artemis board, which then relayed the same string back to the Python code. To facilitate this, I integrated the ECHO command into the Arduino code within the ble_arduino.ino file, where 'echo' was appended to the array of command types. The code for ECHO is shown below
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/echoarduino.png?raw=true" width="500" height="300">
 
 The following command is used in Python:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/echojup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/echojump.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/advert.png?raw=true" width="500" height="300">
+
 ### GET_TIME_MILLIS
 The next command focused on obtaining the current time from the Artemis board. This required utilizing the millis() function from the Arduino library. The value obtained from millis() was then converted into a double data type, and then formatted into a string. This string representation of the current time was then transmitted to the Python script. The relevant segment of the Arduino code is below:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisarduino.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/getmillisarduino.png?raw=true" width="500" height="300">
+
 And below is the command in Python.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true" width="500" height="300">
 
 ### Notification Handler
 To fix automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the board. The incorporation of a message array in this setup will be beneficial for future labs, as it allows for the reception of multiple string arrays autonomously, without manual requests. The Python code is provided below:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true" width="500" height="300">
+
 ### Current time in milliseconds 
 I created a loop on the Artemis board to capture the current time in milliseconds at regular intervals and send these timestamps to my laptop. The laptop processed the incoming data. By collecting  the timestamps for a set duration, the effective data transfer rate was also calculated.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true" width="500" height="300">
 
 ### Send Time
 To collect and transmit timestamp data from the Artemis board to my laptop, a global array was created. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead. Below is the use code.

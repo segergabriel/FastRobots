@@ -40,10 +40,7 @@ Next, I connected the Artemis Board to the Python code. This was achieved by upl
 
 I also modified the MAC address in the Python script within the connection.yaml file, as shown below. This modification was important for enabling the Python code to detect and establish a connection with the Artemis. The second step involved the use of a unique UUID address. Given that multiple Artemis boards in the course had identical MAC addresses, it was possible for the Python code to inadvertently connect to the wrong board. Therefore, I generated a unique UUID in Python, which I then incorporated into the ble_service field in the connection.yaml file and the BLE_UUID_TEST_SERVICE in the Arduino code.
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true" width="500" height="250">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/jupuuid.png?raw=true" width="500" height="200">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/arduuid.png?raw=true" width="500" height="250">
 
 ### Echo
@@ -60,31 +57,22 @@ The following command is used in Python:
 ### GET_TIME_MILLIS
 The next command focused on obtaining the current time from the Artemis board. This required utilizing the millis() function from the Arduino library. The value obtained from millis() was then converted into a double data type, and then formatted into a string. This string representation of the current time was then transmitted to the Python script. The relevant segment of the Arduino code is below:
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisarduino.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/getmillisarduino.png?raw=true" width="500" height="300">
 
 And below is the command in Python.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/getmillisjup.png?raw=true" width="500" height="300">
-
 ### Notification Handler
 To fix automatic data acquisition without the need for manual requests, a notification handler was implemented in Python. This feature is designed to automatically receive data from the board. The incorporation of a message array in this setup will be beneficial for future labs, as it allows for the reception of multiple string arrays autonomously, without manual requests. The Python code is provided below:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/nothandler2.png?raw=true" width="500" height="300">
 
 ### Current time in milliseconds 
 I created a loop on the Artemis board to capture the current time in milliseconds at regular intervals and send these timestamps to my laptop. The laptop processed the incoming data. By collecting  the timestamps for a set duration, the effective data transfer rate was also calculated.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/nothandler1.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/transferrate.png?raw=true" width="500" height="300">
 
 ### Send Time
 To collect and transmit timestamp data from the Artemis board to my laptop, a global array was created. When receiving a SEND_TIME_DATA command, the Artemis board transmitts the stored timestamps to the computer, where they are received and stored in a Python list for processing. This system optimized data transmission by bundling multiple timestamps in a single BLE packet, minimizing transmission overhead. Below is the use code.
@@ -93,9 +81,9 @@ To collect and transmit timestamp data from the Artemis board to my laptop, a gl
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="300">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="350">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true" width="300" height="100">
 
 ### Get Temperature
 For this task, an additional array was created with the timestamp array on the Artemis board to hold temperature readings, correspondending between the timestamps and the temperature data. Upon the GET_TEMP_READINGS command, the board transmitted each paired timestamp and temperature reading to my laptop. The notification handler received this data, parsing and allocating the readings into two separate lists for timestamps and temperatures. This approach facilitated synchronized data collection and provided a structured dataset.

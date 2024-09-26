@@ -79,6 +79,7 @@ To collect and transmit timestamp data from the Artemis board to my laptop, a gl
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTime.png?raw=true" width="500" height="150">
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/sendTimejup.png?raw=true" width="500" height="350">
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/recSendData.png?raw=true)
 
 ### Get Temperature

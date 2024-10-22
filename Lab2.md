@@ -42,6 +42,8 @@ Below is the collected data and FFT with no large noise source around.
 
 Below is the code that was used for the low-pass filter. 
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true" width="400" height="200">
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true)
 
 I believe this is due to the low magnitude of noise since the IMU already has a low pass filter according to its datasheet

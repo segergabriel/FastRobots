@@ -37,7 +37,7 @@ Below I also included some of my logic from the main loop.
 
 I used my implementation from lab 11 and added logic to it to autonomously navigate the robot through the waypoints. My added Jupyter code is heavily influenced by our TA Rafi, but with some adjustments to fit the rest of my code. First, I defined an array of our waypoints, which are converted to meters. In the loop, the robot iterates through each waypoint, initializing its belief state and performing the rotation. The robot then updates its belief state based on the data. After that, I calculate the distance between the robot's current belief position and the goal waypoint, and if the robot is within a threshold distance of 0.31 meters, it updates the ground truth position and send a command to move to the next waypoint. This is handled via Bluetooth again and for this case I created a NEXT_POINT case. See my full implementation below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12jup.png?raw=true" width="400" height="250">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12jup.png?raw=true" width="400" height="300">
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/12jup2.png?raw=true" width="500" height="400">
 

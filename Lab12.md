@@ -13,7 +13,7 @@ As the car navigates the maze, it must perform three different actions. The firs
 After we have localized the position, the task is to turn the car to the right angle. I'm using my orient PID control to turn the car to the desired value by tracking its angular position by integrating the angular velocity from the gyroscope and stop once the 
 desired angle is reached. Exactly how this value is calculated is shown below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="300" height="70">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="300" height="40">
 
 
 After we succesfully turned the car so it faces the next waypoint, the next task is to move it forward to the waypoint. 

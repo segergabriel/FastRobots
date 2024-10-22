@@ -66,13 +66,13 @@ Here is the outputs from the serial plotter when it's held flat and when lifted.
 ### Complimentary Filter
 To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.
 
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true" width="400" height="100">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true)
-
 ### Sample Data
-After eliminating all delay and print statements, and by storing time, accelerometer, and gyroscope data, the sampling rate became very fast. The average was around 4ms. This could result in an excessive volume of data collected in a brief duration. Such a large dataset could quickly consume the Artemis' storage capacity and make it challenging to analyze the robot's long-term behavior. To manage this, the data was stored into different string arrays before being trannsmitted to my laptop. Note that the IMU values are int16_t and 100 values for each array was enough. This was about 10000Kb and with the 384kB internal data, the artemis has plenty of memory for data collection. See my implementation below. 
+After eliminating all delay and print statements, and by storing time, accelerometer, and gyroscope data, the sampling rate became very fast. The average was around 4ms. This could result in an excessive volume of data collected in a brief duration. Such a large dataset could quickly consume the Artemis' storage capacity and make it challenging to analyze the robot's long-term behavior. To manage this, the data was stored into different string arrays before being transmitted to my laptop. Note that the IMU values are int16_t and 100 values for each array was enough. This was about 10000Kb and with the 384kB internal data, the artemis has plenty of memory for data collection. See my implementation below. 
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true" width="400" height="500">
+
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2sample.png?raw=true)
  

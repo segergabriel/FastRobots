@@ -26,10 +26,8 @@ Employing these equations, the values for pitch and roll were computed at each i
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoflat.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true" width="300" height="150">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true" width="300" height="150">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true" width="300" height="150">
 
 The accelerometer has high accuracy when coupled with a low pass filter, although it displays a slight deviation from the mean. Below you can see expected versus actual values for pitch and roll.
 
@@ -54,6 +52,8 @@ The gyroscope uses the change in angle around each axis with this equation.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyroeq.png?raw=true)
 
 And here you can see the code that was used. 
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2gyrocode.png?raw=true" width="400" height="250">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyrocode.png?raw=true)
 

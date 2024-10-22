@@ -47,9 +47,6 @@ The figure below displays the output for the two sensors in mm.
 
 The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. See the implementation and output below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true)
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true" width="400" height="400">
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true" width="200" height="500">
@@ -60,6 +57,8 @@ One can see that the loop duration is approximately 2ms when the sensors are ina
 ### Time versus Distance
 
 I modified  the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true" width="400" height="400">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
 

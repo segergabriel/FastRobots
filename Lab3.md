@@ -12,9 +12,6 @@ The positioning of the ToF sensors is important and can influence different char
 
 ### Connecting the first ToF sensor
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4board.jpeg?raw=true)
-
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/4board.jpeg?raw=true" width="400" height="400">
 
 First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different addresses, as noted in the prelab.
@@ -23,16 +20,16 @@ First, I had to solder a connection between the ToF sensors and the Artemis boar
 
 The SparkFun VL53L1X 4m laser distance sensor library was installed via the Arduino IDE. Then, the Apollo 3 -> Example05_Wire_I2C.ino was used as an example to learn the I2C library. The address that appears on the serial monitor is 0x29, which is different from the 0x52 address indicated in the datasheet. I believe this is due to the final bit of the address, which signifies read/write status, is not considered part of the address. Therefore, the address could be either 0x52 or 0x29. The connection is displayed below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true" width="400" height="150">
-
 
 ### Distance Measurements
 
 To verify reliability of the sensor, we need to test its measurement data. This was done by comparing actual versus collected data. The ToF sensor has two modes, short and long. Depending on the task, different distance modes can be set on the robot in order to maximize accuracy. For example, a task that involves avoiding many nearby obstacles would rely on the short distance mode. Because of this, a slower moving robot will benefit due to its effective range of up to 1.3 meters. However, we are building a fast robot, and therefore we will need the ability to detect obstacles at greater distances. While the long distance mode introduces more noise, it extends the range to approximately 4 meters, and the fast-moving robot will be able to react in time. 
 Below is the output for one sensor.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true" width="400" height="150">
+
 
 I needed to evaluate the accuracy of the sensor at shorter distances, as those are not the ranges the mode is optimized for.  With the short mode, I collected various data points over distances by marking distances along a wall and moving the TOF sensor along it facing an object on the other end. The data points which are displayed in the graph below. The data is consistent and linear. The standard deviation bars, which I included in the graph, didn't showed up for shorter ranges. However, at longer distances the deviation bars became somewhat noticeable, suggesting a slight tendency of the ToF sensor to overshoot distances as the range increased.
 

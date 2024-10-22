@@ -28,7 +28,7 @@ To verify reliability of the sensor, we need to test its measurement data. This 
 Below is the output for one sensor.
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true" width="400" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true" width="400" height="150">
 
 
 I needed to evaluate the accuracy of the sensor at shorter distances, as those are not the ranges the mode is optimized for.  With the short mode, I collected various data points over distances by marking distances along a wall and moving the TOF sensor along it facing an object on the other end. The data points which are displayed in the graph below. The data is consistent and linear. The standard deviation bars, which I included in the graph, didn't showed up for shorter ranges. However, at longer distances the deviation bars became somewhat noticeable, suggesting a slight tendency of the ToF sensor to overshoot distances as the range increased.

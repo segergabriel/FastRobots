@@ -56,11 +56,13 @@ One can see that the loop duration is approximately 2ms when the sensors are ina
 
 ### Time versus Distance
 
-I modified  the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
+I modified  the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented.
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true" width="400" height="310">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
-
 These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations wand is displayed below. 
+
+![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true" width="400" height="310">
 

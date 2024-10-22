@@ -39,14 +39,14 @@ To enable parallel operation of the two ToF sensors, I adapted the Artemis code 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true" width="400" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true" width="400" height="250">
 
 
 The figure below displays the output for the two sensors in mm.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="400" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="300" height="100">
 
 
 ### Tof sensor speed

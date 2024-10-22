@@ -1,7 +1,7 @@
 ## Lab 2: IMU
 
 ### Objective
-The goal of this lab is to configure and be able to use an IMU sensor on our robot. It involved configuring the IMU sensor and accurately capturing its data. 
+The goal of this lab is to configure IMU sensor on our robot and accurately capturing its data. 
 
 ### Setup
 
@@ -17,6 +17,8 @@ When printing the output, the accelerometer data presents the acceleration measu
 Roll = atan2(a_x, a_z)
 
 Pitch = atan2(a_y, a_z)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true" width="300" height="100">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true)
 

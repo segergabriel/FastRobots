@@ -26,10 +26,8 @@ The SparkFun VL53L1X 4m laser distance sensor library was installed via the Ardu
 
 To verify reliability of the sensor, we need to test its measurement data. This was done by comparing actual versus collected data. The ToF sensor has two modes, short and long. Depending on the task, different distance modes can be set on the robot in order to maximize accuracy. For example, a task that involves avoiding many nearby obstacles would rely on the short distance mode. Because of this, a slower moving robot will benefit due to its effective range of up to 1.3 meters. However, we are building a fast robot, and therefore we will need the ability to detect obstacles at greater distances. While the long distance mode introduces more noise, it extends the range to approximately 4 meters, and the fast-moving robot will be able to react in time. 
 Below is the output for one sensor.
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3dist1.png?raw=true" width="400" height="150">
-
 
 I needed to evaluate the accuracy of the sensor at shorter distances, as those are not the ranges the mode is optimized for.  With the short mode, I collected various data points over distances by marking distances along a wall and moving the TOF sensor along it facing an object on the other end. The data points which are displayed in the graph below. The data is consistent and linear. The standard deviation bars, which I included in the graph, didn't showed up for shorter ranges. However, at longer distances the deviation bars became somewhat noticeable, suggesting a slight tendency of the ToF sensor to overshoot distances as the range increased.
 
@@ -41,9 +39,14 @@ To enable parallel operation of the two ToF sensors, I adapted the Artemis code 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true" width="400" height="150">
+
+
 The figure below displays the output for the two sensors in mm.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="400" height="150">
 
 
 ### Tof sensor speed

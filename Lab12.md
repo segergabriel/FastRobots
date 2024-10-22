@@ -2,22 +2,19 @@
 
 ### Lab Objective
 
-After many hours of dedicated work in this course, the final lab (Lab 12) involves navigating our robot through a maze. The goal of this lab is to reach all nine waypoints using any effective method. The first method I 
-chose was localization and PID control. This would allow the robot to function autonomously and adjust its position. As the reader will see, I had to make some adjustments to my initial plan. 
+After many hours of dedicated work in this course, the final lab (Lab 12) involves navigating the robot through a maze. The goal of this lab is to reach all nine waypoints using any effective method. The first method I chose was localization and PID control. This would allow the robot to function autonomously and adjust its position. As the reader will see, I had to make some adjustments to my initial plan. 
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/IMG_7166.jpeg?raw=true" width="500" height="400">
 
 ### Planning and Design
 
-As the car navigates the maze, it must perform three different actions. The first task is to localize the position of the robot. This is identical to the localization process that I created in Lab 11. For this task, 
-the car roatates slowly in a 360-degree circle and takes 18 readings. As it rotates, the car sends a series of distance measurements over Bluetooth. These measurements tells us about the robots belief of the postition, 
-which we will use in the next steps. 
+As the car navigates the maze, it must perform three different actions. The first task is to localize the position of the robot. This is identical to the localization process that I created in Lab 11. For this task, the car roatates slowly in a 360-degree circle and takes 18 readings. As it rotates, the car sends a series of distance measurements over Bluetooth. These measurements tells us about the robots belief of the postition, which we will use in the next steps. 
 
 After we have localized the position, the task is to turn the car to the right angle. I'm using my orient PID control to turn the car to the desired value by tracking its angular position by integrating the angular velocity from the gyroscope and stop once the 
 desired angle is reached. Exactly how this value is calculated is shown below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="500" height="70">
-atan
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="300" height="70">
+
 
 After we succesfully turned the car so it faces the next waypoint, the next task is to move it forward to the waypoint. 
 

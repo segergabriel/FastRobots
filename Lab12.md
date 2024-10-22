@@ -21,7 +21,6 @@ After we succesfully turned the car so it faces the next waypoint, the next task
 To move the car, a function was created to stop the car after it has traveled the desired distance. So, a setpoint was calculated by subtracting the desired travel distance from the current frontal ToF sensor reading. When the new ToF sensor reading is less or equal to the initial reading, it indicates that the car has reached the desired postition. After determining the setpoint, the car behaves similar as in Lab 7, using a PID controller to reach the setpoint. Below I show how the desired distance is calculated depending on the values transfered from the localization step. 
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/12des.png?raw=true" width="650" height="35">
-desired
 
 And below the function nextPoint() is demonstrated, which handles most of the logic for these three tasks. It's also important to note that much of my design relies on previous implementations of PID controllers and functions from previous labs. However, these flags and functions are activated or called from this function. 
 

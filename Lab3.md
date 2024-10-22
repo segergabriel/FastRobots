@@ -58,7 +58,7 @@ One can see that the loop duration is approximately 2ms when the sensors are ina
 
 I modified  the code from the first lab to include the distance data, which is important for debugging the ToF sensors. I followed the same procedure as lab 1 for adding a Bluetooth command. Then, I integrated my new distance measurement method from the previous section into the handle_command() function. Lastly, I stored them in two variables, distance1 and distance2. Below is the arduino code that was implemented. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true" width="400" height="350">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true" width="400" height="310">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalcode.png?raw=true)
 

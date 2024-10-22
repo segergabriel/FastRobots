@@ -18,7 +18,7 @@ Roll = atan2(a_x, a_z)
 
 Pitch = atan2(a_y, a_z)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true" width="300" height="100">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true" width="300" height="50">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true)
 

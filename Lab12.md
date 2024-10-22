@@ -29,9 +29,9 @@ And below the function nextPoint() is demonstrated, which handles most of the lo
 
 Below I also included some of my logic from the main loop. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12pid.png?raw=true" width="500" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12pid.png?raw=true" width="500" height="100">
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12orient.png?raw=true" width="500" height="400">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12orient.png?raw=true" width="500" height="500">
 
 ### Jupyter Planning
 

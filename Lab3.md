@@ -25,6 +25,9 @@ The SparkFun VL53L1X 4m laser distance sensor library was installed via the Ardu
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3onetof.png?raw=true" width="400" height="150">
+
+
 ### Distance Measurements
 
 To verify reliability of the sensor, we need to test its measurement data. This was done by comparing actual versus collected data. The ToF sensor has two modes, short and long. Depending on the task, different distance modes can be set on the robot in order to maximize accuracy. For example, a task that involves avoiding many nearby obstacles would rely on the short distance mode. Because of this, a slower moving robot will benefit due to its effective range of up to 1.3 meters. However, we are building a fast robot, and therefore we will need the ability to detect obstacles at greater distances. While the long distance mode introduces more noise, it extends the range to approximately 4 meters, and the fast-moving robot will be able to react in time. 

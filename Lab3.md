@@ -64,5 +64,3 @@ I modified  the code from the first lab to include the distance data, which is i
 
 These modifications enabled me to retrieve data from both sensors using a single command, GET_DIST_FOR2. The distances of both sensors were taken over time, and sent to Jupyter using an updated notification handler. This data provided clear visualizations wand is displayed below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true)
-

@@ -37,14 +37,9 @@ I needed to evaluate the accuracy of the sensor at shorter distances, as those a
 
 To enable parallel operation of the two ToF sensors, I adapted the Artemis code as outlined in the prelab and assigned distinct I2C addresses to each sensor. I talked about this in the prelab but this was achieved by cutting off power to one sensor using pin 8, allowing me to modify the powered sensor's address to 0x20. Then, the unpowered sensor was reactivated and the same thing was done to the second sensor which was modified to address 0x29. After this, both sensors were able to function concurrently and effectively gather data. Below is my code to set the addresses. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3setadd.png?raw=true" width="400" height="250">
 
-
 The figure below displays the output for the two sensors in mm.
-
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="300" height="80">
 

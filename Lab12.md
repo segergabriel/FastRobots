@@ -52,18 +52,18 @@ I really wanted my robot to be fully able to navigate through the maze by itself
 
 ### Results
 
-The first video shows my robot succesfullt localize itself and turning to the desired angle to point at the next waypoint. However, as one can see it doesn't move as it the desired position outputs zero. Therefore, it moves on and starts the localization process again. I wish I had more time to spend on this to fix this problem.
+The first video shows my robot succesfully localize itself and turning to the desired angle to point at the next waypoint. However, as one can see, it doesn't move as its desired position outputs zero. Therefore, it moves on and starts the localization process again. I wish I had more time to spend on this to fix this problem.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ztlRd8qHEGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The second video shows oen of my runs with a hardcoded distance traveled. One exciting aspect about my result is that my robot is moving, calculating and transfering data fast. 
+The second video shows one of my runs with a hardcoded distance traveled. One exciting aspect about my result is that my robot is moving, calculating and transfering data fast. 
 In the video one can see that the implementation works well until later on when the distance and the localization belief, unfortunately aren't accurate enough for the robot to make it to the last two waypoints. Another potential reason for this is that the gyroscope drifts over time, as mentioned in earlier labs. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q9PnoNT76YM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Acknowledgements
 
-I want to thank all the TAs in this course for all their hard work and help during this semester. I want to give extra thanks to Rafi, who was super helpful throughout the course and made sure to have extra lab hours multiple times a week. 
+I want to thank all the TAs in this course for all their hard work and help during this semester. I want to give extra thanks to Rafi, who was super helpful throughout the course and made sure to have extra lab hours open multiple times a week. 
 Finally, I want to thank Jonathan for a great semester and course!
 
 

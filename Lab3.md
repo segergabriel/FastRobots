@@ -64,5 +64,3 @@ These modifications enabled me to retrieve data from both sensors using a single
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true" width="400" height="310">
-

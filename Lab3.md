@@ -46,7 +46,7 @@ The figure below displays the output for the two sensors in mm.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="300" height="100">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="300" height="80">
 
 
 ### Tof sensor speed

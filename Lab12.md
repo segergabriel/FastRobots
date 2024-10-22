@@ -13,14 +13,14 @@ As the car navigates the maze, it must perform three different actions. The firs
 After we have localized the position, the task is to turn the car to the right angle. I'm using my orient PID control to turn the car to the desired value by tracking its angular position by integrating the angular velocity from the gyroscope and stop once the 
 desired angle is reached. Exactly how this value is calculated is shown below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="400" height="50">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12angle.png?raw=true" width="500" height="50">
 
 
 After we succesfully turned the car so it faces the next waypoint, the next task is to move it forward to the waypoint. 
 
 To move the car, a function was created to stop the car after it has traveled the desired distance. So, a setpoint was calculated by subtracting the desired travel distance from the current frontal ToF sensor reading. When the new ToF sensor reading is less or equal to the initial reading, it indicates that the car has reached the desired postition. After determining the setpoint, the car behaves similar as in Lab 7, using a PID controller to reach the setpoint. Below I show how the desired distance is calculated depending on the values transfered from the localization step. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12des.png?raw=true" width="600" height="50">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12des.png?raw=true" width="600" height="40">
 desired
 
 And below the function nextPoint() is demonstrated, which handles most of the logic for these three tasks. It's also important to note that much of my design relies on previous implementations of PID controllers and functions from previous labs. However, these flags and functions are activated or called from this function. 

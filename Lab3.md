@@ -43,12 +43,17 @@ The figure below displays the output for the two sensors in mm.
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3twotof.png?raw=true" width="300" height="80">
 
-
 ### Tof sensor speed
+
 The response time of the sensors are a limiting factor and therefore, I modify the code to only read the data when the data is ready. This modification was based on the example code used for sensor testing. I also placed a command to print the current time using millis() outside the conditional statement that prints the time once for every loop. This is helpful to decide how often distance readings are recorded. See the implementation and output below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true" width="300" height="80">
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedtof.png?raw=true" width="300" height="80">
+
 
 One can see that the loop duration is approximately 2ms when the sensors are inactive but extends to around 20ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.
 

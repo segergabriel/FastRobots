@@ -15,7 +15,7 @@ The positioning of the ToF sensors is important and can influence different char
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4board.jpeg?raw=true)
 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/4board.jpeg?raw=true" width="400" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/4board.jpeg?raw=true" width="400" height="300">
 
 First, I had to solder a connection between the ToF sensors and the Artemis board. So, the red wire was connected to the Vin and the black wire to the ground. Then, I had to identify the roles of the blue and yellow wires, which correspond to the SDA and SCL data signals. From looking in the Artemis board datasheet, I could determine that the blue wire should be soldered to the SDA pin and the yellow wire to the SCL pin for both sensors. I also soldered both the xshut pins to artemis gpio pins, in order to configure the sensors to different addresses, as noted in the prelab.
 

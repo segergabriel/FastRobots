@@ -52,7 +52,7 @@ The response time of the sensors are a limiting factor and therefore, I modify t
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedcode.png?raw=true" width="400" height="400">
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speedtof.png?raw=true" width="200" height="500">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/3speed.png?raw=true" width="200" height="500">
 
 
 One can see that the loop duration is approximately 2ms when the sensors are inactive but extends to around 20ms during data collection. This shows that acquiring sensor data is the limiting factor in the process. By minimizing the frequency of sensor polling, there's an opportunity to increase the number of other calculations performed within the same time frame.

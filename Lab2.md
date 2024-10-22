@@ -25,8 +25,8 @@ Employing these equations, the values for pitch and roll were computed at each i
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoflat.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccoutflat.png?raw=true" width="300" height="150">
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccoout90.png?raw=true" width="300" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true" width="300" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccout90.png?raw=true" width="300" height="150">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true)

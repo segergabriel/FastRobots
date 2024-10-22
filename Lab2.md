@@ -42,7 +42,7 @@ Below is the collected data and FFT with no large noise source around.
 
 Below is the code that was used for the low-pass filter. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true" width="400" height="200">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true" width="400" height="150">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true)
 

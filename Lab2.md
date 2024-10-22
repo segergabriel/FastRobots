@@ -67,7 +67,7 @@ Here is the outputs from the serial plotter when it's held flat and when lifted.
 To address the issue of noise and drift from the accelerometer and the gyroscope, a complimentary filter was implemented. This is demonstrated in the code below. This filter uses a weighting function, defined by the variable 'alpha', to mitigate noise from the accelerometer and drifting from the gyroscope. The optimal value of 'alpha' was established through a series of tests and it was determined to be 0.1.
 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true" width="400" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true" width="400" height="100">
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2comp.png?raw=true)
 

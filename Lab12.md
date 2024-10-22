@@ -43,12 +43,9 @@ I used my implementation from lab 11 and added logic to it to autonomously navig
 
 ### Problems
 
-I faced a lot of small problems while working on this lab, like most other students. Most of them were solved by debuggign or help from my class mates or TAs. One example was the handling of flags and not running multiple PIDs at once. A second
-issue was the handling trasnfer of data. My issue here was first connected to using the belief of the robot, but this was solved by editing some of the files that were given to us and returning the belief. After that, I got some unreliable data for some 
-points which confused the robots belief of its position. However, there was one issue I spent hours on and unfortunately I ran out of time and couldn't fix it. It had to do with how the values I sent over bluetooth was stored in my arduino code, 
-currentY and goalY for example. 
+I faced a lot of small problems while working on this lab, like most other students. One example was the handling of flags and not running multiple PIDs at once. A second issue was the handling of the transfer of data. My issue here was first connected to using the belief of the robot, but this was solved by editing some of the files that were given to us and returning the belief. I also got some unreliable data for some points which confused the robots belief of its position. However, there was one issue I spent hours on and unfortunately I ran out of time and couldn't fix it. It had to do with how the values I sent over bluetooth was stored in my arduino code, currentY and goalY for example. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12curY.png?raw=true" width="500" height="200">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/12curY.png?raw=true" width="250" height="100">
 
 As shown, the right values were transfered and could succesfully be used to calculate the angle the car should turn. The problem was that these values reset to zero after they were used in "step1" of nextPoint(), so when the desired position to travel were calculuted it always came out to zero as well. After getting helped and trying to debug this problem without any clear solution, I decided to hardcode the distance the car should travel for each waypoint. It worked pretty well but it was frustrating as
 I really wanted my robot to be fully able to navigate through the maze by itself. This also lead to complications for later waypoints. For example, if the localization and turning of the car wasn't exactly correct, it didn't have a chance to fix itself, as my code moved on to driving the car for a set distance in the following step. I also noticed that depending on the battery, the car traveled a different distance. 

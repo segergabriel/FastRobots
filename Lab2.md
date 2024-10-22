@@ -42,8 +42,6 @@ Below is the code that was used for the low-pass filter.
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true" width="400" height="150">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2lpfcode.png?raw=true)
-
 I believe this is due to the low magnitude of noise since the IMU already has a low pass filter according to its datasheet
 
 ### Gyroscope
@@ -53,9 +51,7 @@ The gyroscope uses the change in angle around each axis with this equation.
 
 And here you can see the code that was used. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2gyrocode.png?raw=true" width="400" height="250">
-
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2gyrocode.png?raw=true)
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2gyrocode.png?raw=true" width="400" height="350">
 
 To minimize noise in the accelerometer data, it was necessary to incorporate gyroscope readings. However, As evident from the graph below, there is a noticeable drift in the gyroscope data over time, with the delay being set to 10 seconds.
 

@@ -20,12 +20,14 @@ Pitch = atan2(a_y, a_z)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true" width="300" height="50">
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2acccode.png?raw=true)
-
 Employing these equations, the values for pitch and roll were computed at each interval and graphically represented using the serial plotter. It was observed that upon rotating the pitch or roll to 90 degrees, the other one became noisy. For instance, during the initial rotation where the pitch approached 90 degrees, the roll measurement saw lots of noise and did not remain at 0.
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accnoflat.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccoutflat.png?raw=true" width="300" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/2acccoout90.png?raw=true" width="300" height="150">
+
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accoutflat.png?raw=true)
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/2accout90.png?raw=true)
 

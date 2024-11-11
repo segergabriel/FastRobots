@@ -2,7 +2,7 @@
 
 ### Lab Objective
 
-The goal for this lab was to implement a PID control on the robot. One of the ToF sensors was used to simulate a simple form of control.
+The goal for this lab was to implement a PID control on the robot. A ToF sensor was used to simulate a simple form of control.
 
 ### Prelab
 

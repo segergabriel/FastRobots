@@ -38,8 +38,6 @@ Note that the C matrix was initialized as C = [-1, 0], same as in lecture becaus
 
 To discretize the matrices I previously calculated, it was necessary to select a specific sampling rate for predicting filter values. I used a sampling rate of 20ms. The formula is as follows:
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true" width="300" height="100">
 
 

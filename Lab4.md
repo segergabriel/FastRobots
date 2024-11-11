@@ -14,9 +14,14 @@ Therefore, I soldered the driver's inputs and outputs together. We also had to d
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/IMG_6939.jpeg?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/IMG_6939.jpeg?raw=true" width="200" height="200">
+
 We are using two 850mAh batteries, enabling us to power the Artemis and the motors independently to avoid transient effects. This is important because the changes in current drawn by the motors could potentially power off the Artemis, leading to a reset of the code when power is restored. I soldered one of the motor drivers according to the schematic above. Finally, one of the input terminals of this motor driver was connected to an oscilloscope, along with its VCC and ground. See my connection below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true)
+
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true" width="100" height="100">
+
 
 ### Power supply 
 

@@ -39,14 +39,14 @@ Finally, writeDifferential() was created which would adjust the speed of the mot
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="250">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="210">
 
 
 Similiar to lab 5, an if-statement was established in my main loop to monitor the IMU for new data availability. When the flag is high and new data is detected, updateOrient and orientPid is called. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true" width="200" height="150">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true" width="200" height="120">
 
 
 ### Input Signal and Derivative term

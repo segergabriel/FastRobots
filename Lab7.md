@@ -40,7 +40,7 @@ To discretize the matrices I previously calculated, it was necessary to select a
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true" width="300" height="170">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true" width="300" height="100">
 
 
 So my matrices are now the following:

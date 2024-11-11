@@ -24,7 +24,7 @@ I created my own PID control function, which is very similiar to lab 5. It opera
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true" width="200" height="500">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true" width="300" height="500">
 
 
 I created updateOrientation() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. The following formula is used: 

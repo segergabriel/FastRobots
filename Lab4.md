@@ -20,7 +20,7 @@ We are using two 850mAh batteries, enabling us to power the Artemis and the moto
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true" width="300" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/4osci.png?raw=true" width="300" height="200">
 
 
 ### Power supply 

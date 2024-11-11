@@ -32,7 +32,7 @@ Angle θ = gyrz * elapsedTime. It's called right before the pid function in my l
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true" width="300" height="200">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true" width="300" height="170">
 
 
 Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the constrain function here to bound the values. This is shown below. 
@@ -46,7 +46,7 @@ Similiar to lab 5, an if-statement was established in my main loop to monitor th
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true)
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true" width="200" height="200">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true" width="200" height="150">
 
 
 ### Input Signal and Derivative term

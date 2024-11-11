@@ -40,6 +40,9 @@ To discretize the matrices I previously calculated, it was necessary to select a
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true)
 
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/7initKF.png?raw=true" width="300" height="170">
+
+
 So my matrices are now the following:
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7ad.png?raw=true)
@@ -50,7 +53,7 @@ Then, I had to estimate the noise variables, sigma_u and sigma_z.
 
 ### Implement and test the Kalman Filter in Jupyter
 
-Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and added my created matrices. This implementation and the yielded result is shown below. 
+Having calculated these values, I was able to implement the Kalman Filter using the function that was provided. I used the code that was given to us and added my created matrices. This implementation and the result is shown below. 
 
 ![advert](https://github.com/segergabriel/FastRobots/blob/main/images/7code.png?raw=true)
 

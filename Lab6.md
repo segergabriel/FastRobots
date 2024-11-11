@@ -22,29 +22,21 @@ which will be integrated from the gyroscope readings. The set point would be the
 
 I created my own PID control function, which is very similiar to lab 5. It operates by inputting the computed "duty_cycle" into the "difference" variable that will be past along to writeDifferential(), which adjust the speed of the wheels. To calculate the error, it uses the global variable curretn_orientation, which I will explain later, below is my implementation. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/6orient.png?raw=true" width="300" height="500">
 
 
 I created updateOrientation() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. The following formula is used: 
 Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See my implementation below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true)
-
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true" width="300" height="170">
 
 
 Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the constrain function here to bound the values. This is shown below. 
 
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true)
-
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="210">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="190">
 
 
 Similiar to lab 5, an if-statement was established in my main loop to monitor the IMU for new data availability. When the flag is high and new data is detected, updateOrient and orientPid is called. 
-
-![advert](https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true)
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/6loop.png?raw=true" width="200" height="120">
 

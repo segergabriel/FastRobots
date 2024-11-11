@@ -28,12 +28,12 @@ I created my own PID control function, which is very similiar to lab 5. It opera
 I created updateOrientation() which updates the global variable "current_orientation." It does this be integrating angular velocity to get change in orientation. The following formula is used: 
 Angle θ = gyrz * elapsedTime. It's called right before the pid function in my loop, making sure it's always updated when a new reading is ready. See my implementation below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true" width="300" height="170">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6update.png?raw=true" width="300" height="150">
 
 
 Finally, writeDifferential() was created which would adjust the speed of the motors. As mentioned earlier, it takes "duty_cycle" as an input and then determine the speed of all motors. I also used the constrain function here to bound the values. This is shown below. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="190">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/6writediff.png?raw=true" width="300" height="170">
 
 
 Similiar to lab 5, an if-statement was established in my main loop to monitor the IMU for new data availability. When the flag is high and new data is detected, updateOrient and orientPid is called. 

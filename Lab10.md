@@ -1,4 +1,4 @@
-## Localization (SIM)
+## Lab 10: Localization (SIM)
 
 ### Lab Objective
 The objective of this lab is to implement grid localization using Bayes filter in a simulation environment. This is important as robot localization is the process of determining where a 

@@ -1,4 +1,4 @@
-## Localization (Real)
+## Lab 11: Localization (Real)
 
 ### Lab Objective
 

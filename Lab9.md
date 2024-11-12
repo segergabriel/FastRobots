@@ -1,4 +1,4 @@
-## Mapping
+## Lab 9: Mapping
 
 ### Lab Objective
 
@@ -12,7 +12,7 @@ The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, f
 
 Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. To implement this new case was created and some slight modifications were made to the main loop, involving setting flags and calling the turn() function. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by 10 degrees. 
 
-<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" width="530" height="300">
+<img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" width="530" height="330">
 
 <img src="https://github.com/segergabriel/FastRobots/blob/main/images/9turn.png?raw=true" width="530" height="300">
 

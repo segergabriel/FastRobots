@@ -1,3 +1,8 @@
+---
+layout: default
+title: ECE4160 Fast Robots
+---
+
 # ECE4160 Fast Robots
 
 Welcome to my Fast Robots webpage. Here you can find my completed labs for this course. I am an Electrical Engineering student interested in robotics. Other than that, I enjoy ice hockey and golf.

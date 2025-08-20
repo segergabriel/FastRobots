@@ -1,6 +1,5 @@
 remote_theme: pages-themes/cayman@v0.2.0
 title: ECE4160 Fast Robots
-description: Labs and notes from Cornell ECE4160 (Fast Robots) by Gabriel Seger
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 

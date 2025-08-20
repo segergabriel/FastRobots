@@ -1,0 +1,94 @@
+/* Typography + global rhythm */
+:root{
+  --text:#0c1116;
+  --muted:#556270;
+  --bg:#ffffff;
+  --brand:#157878;
+  --surface:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --text:#e6e9ee;
+    --muted:#9aa4b2;
+    --bg:#0b0d10;
+    --surface:#12151a;
+    --brand:#2ca9b7;
+  }
+}
+html,body{ background:var(--bg); color:var(--text); }
+.main-content { max-width: 980px; }
+
+/* Header polish */
+.page-header{
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 12%, #0000), var(--brand));
+  padding-top: 3rem;
+  padding-bottom: 2.4rem;
+}
+.project-name{ margin-bottom: .25rem; }
+.project-tagline{ color: #fff; opacity: .9; }
+
+/* Better content spacing */
+.main-content h1, .main-content h2, .main-content h3{
+  margin-top: 1.6rem;
+  margin-bottom: .6rem;
+}
+.main-content p, .main-content ul, .main-content ol{
+  color: var(--text);
+}
+.main-content img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+.main-content table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.main-content table th, .main-content table td{
+  border: 1px solid rgba(0,0,0,.08);
+  padding: .5rem .6rem;
+}
+
+/* Make that labs list look like cards (homepage only) */
+.labs-grid ul{
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+  margin-top: .8rem;
+}
+.labs-grid li{
+  margin: 0;
+}
+.labs-grid a{
+  display: block;
+  background: var(--surface);
+  border: 1px solid rgba(0,0,0,.08);
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  transition: transform .06s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.labs-grid a:hover{
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 30%, #0000);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+/* Buttons in the header look crisper */
+.btn{
+  border-radius: 12px !important;
+  padding: .55rem .9rem !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+}
+
+/* Footnotes / code blocks readability */
+.main-content code, .main-content pre{
+  line-height: 1.5;
+  font-size: .95em;
+  overflow-x: auto;
+}

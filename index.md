@@ -1,7 +1,6 @@
 ---
 layout: default
 title: ECE4160 Fast Robots
-description: Labs and notes from Cornell ECE4160 (Fast Robots)
 ---
 
 # ECE4160 Fast Robots

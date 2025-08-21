@@ -78,6 +78,24 @@ html,body{ background:var(--bg); color:var(--text); }
   border-color: color-mix(in srgb, var(--brand) 30%, #0000);
   box-shadow: 0 12px 28px rgba(0,0,0,.10);
 }
+.home-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.home-button:hover {
+  background-color: #555;
+}
+
 
 /* Buttons in the header look crisper */
 .btn{

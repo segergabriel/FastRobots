@@ -107,4 +107,4 @@ To manage this, the data was stored in different string arrays before being tran
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/2sample.png?raw=true" alt="Sampling implementation code" style="max-width:520px; width:100%; border-radius:8px; margin:1em auto; display:block;">
 </div>
 
-In addition to the data management, I had to combine two files in order to be able to transfer data. I created a header file for the IMU sensor file and included that in the BLE file, where I then ran the program.
+To enable data transfer, I combined two files by creating a header file for the IMU sensor and including it in the BLE file, where I then executed the program.

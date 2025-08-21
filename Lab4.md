@@ -105,7 +105,8 @@ Here is the code for these commands and the video that displays the car executin
 </div>
 
 
-<div style="display: flex; justify-content: space-between; margin-top: 2em;">
-  <a href="lab3.md" class="btn">← Prev Lab</a>
-  <a href="lab5.md" class="btn">Next Lab →</a>
+<div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
+  <a href="./Lab3.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab5.html" class="nav-btn">Next Lab →</a>
 </div>
+

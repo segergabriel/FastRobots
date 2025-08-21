@@ -130,7 +130,8 @@ Here is the resulting video and figure:
 
 ---
 
-<div style="display: flex; justify-content: space-between;">
-  <a href="lab4.md" class="btn">← Previous Lab</a>
-  <a href="lab6.md" class="btn">Next Lab →</a>
+<div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
+  <a href="./Lab4.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab6.html" class="nav-btn">Next Lab →</a>
 </div>
+

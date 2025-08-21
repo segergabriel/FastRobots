@@ -104,3 +104,8 @@ Here is the code for these commands and the video that displays the car executin
   <iframe width="560" height="315" src="https://www.youtube.com/embed/3ld7t3fYGeA" frameborder="0" allowfullscreen></iframe>
 </div>
 
+
+<div style="display: flex; justify-content: space-between; margin-top: 2em;">
+  <a href="lab3.html" class="btn">← Prev Lab</a>
+  <a href="lab5.html" class="btn">Next Lab →</a>
+</div>

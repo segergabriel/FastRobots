@@ -1,7 +1,5 @@
 ## LAB 3: Time-Of-Flight Sensor
 
-[🏠 Home](./index.md)
-
 ### Lab Objective
 The goal of this lab was to connect the Artemis board to two VL53L1X Time-of-Flight distance sensors. This involved soldering and connecting the sensors to the Artemis board. Distance sensors will allow our robot to detect and react to obstacles in future tasks, and the faster the robot can sample data, the faster it will be able to drive.
 

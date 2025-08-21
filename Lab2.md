@@ -1,7 +1,5 @@
 ## Lab 2: IMU
 
-[🏠 Home](./index.md)
-
 ### Objective
 The goal of this lab is to configure the IMU sensor on our robot and accurately capture its data.  
 

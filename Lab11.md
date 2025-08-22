@@ -89,7 +89,7 @@ My results indicate that my robot has a very high confidence in its updated posi
 
 ---
 <div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
-  <a href="./Lab5.html" class="nav-btn">← Prev Lab</a>
-  <a href="./Lab7.html" class="nav-btn">Next Lab →</a>
+  <a href="./Lab10.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab12.html" class="nav-btn">Next Lab →</a>
 </div>
 ---

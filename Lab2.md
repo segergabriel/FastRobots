@@ -106,3 +106,8 @@ To manage this, the data was stored in different string arrays before being tran
 </div>
 
 To enable data transfer, I combined two files by creating a header file for the IMU sensor and including it in the BLE file, where I then executed the program.
+
+<div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
+  <a href="./Lab1.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab3.html" class="nav-btn">Next Lab →</a>
+</div>

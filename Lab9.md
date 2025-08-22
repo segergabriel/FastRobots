@@ -7,7 +7,7 @@ The objective of this lab is to construct a two-dimensional map of a static envi
 The robot is already equipped with ToF sensors, an IMU, and motor drivers. So, from a hardware perspective, the robot is ready to execute all the required tasks for this lab. The work for this lab therefore involves software programming. The first task involves programming the robot to rotate in place with precise and small increments. Then, the robot will record data from the ToF sensor along with the gyroscope's orientation at each of these increments. 
 
 ### Implementation
-Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. To implement this, a new case was created and some slight modifications were made to the main loop, involving setting flags and calling the `turn()` function. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by **`10`** degrees. 
+Because I have already implemented orientation control, controlling the robot's rotation through PID control simply involves gradually increasing the setpoint. To implement this, a new case was created and some slight modifications were made to the main loop, involving setting flags and calling the `turn()` function. Below is a code snippet that demonstrates how this is achieved. Note that I increment the angle by 10 degrees. 
 
 <div style="text-align:center;">
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/9case.png?raw=true" alt="Mapping case code" style="max-width:530px; width:100%; border-radius:8px; margin:1em auto; display:block;">
@@ -40,10 +40,10 @@ The map is based on a grid, with each square tile being one grid cell. The robot
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/9spot.png?raw=true" alt="Robot sampling spot" style="max-width:420px; width:100%; border-radius:8px; margin:1em auto; display:block;">
 </div>
 
-In order to collect data, the robot takes a ToF measurement when the robot is at a setpoint as well as every time **`orientPid()`** is called. It also collects the current orientation from the IMU and repeats this until it has turned **`360°`**. Finally, I send the data over Bluetooth in the same way as previous labs. 
+In order to collect data, the robot takes a ToF measurement when the robot is at a setpoint as well as every time **`orientPid()`** is called. It also collects the current orientation from the IMU and repeats this until it has turned 360°. Finally, I send the data over Bluetooth in the same way as previous labs. 
 
 ### Plotting Data and Merging Data
-As I am using orientation PID control, I need to trust the orientation from the integrated gyroscope values. Since the robot performs rotations in place and measures distances to walls, it is beneficial to do quick visual checks using polar plots. These plots provide a clear visual representation of the measurements taken at each designated spot. My car seems to rotate around **`10°`** too much, but by looking at the plots I still believe that the map will come out accurate.  
+As I am using orientation PID control, I need to trust the orientation from the integrated gyroscope values. Since the robot performs rotations in place and measures distances to walls, it is beneficial to do quick visual checks using polar plots. These plots provide a clear visual representation of the measurements taken at each designated spot. My car seems to rotate around 10° too much, but by looking at the plots I still believe that the map will come out accurate.  
 
 The collected data comprises the orientation and the distance measurements, which are represented in polar coordinates **`(ρ, φ)`**. To convert the data into a global frame, this data first needs to be converted into Cartesian coordinates and then transformed accordingly. The following code snippet handles this.
 

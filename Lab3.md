@@ -74,3 +74,7 @@ These modifications enabled me to retrieve data from both sensors using a single
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/3finalgraph.png?raw=true" alt="Time vs distance for two sensors plotted in Jupyter" style="max-width:760px; width:100%; border-radius:8px; margin:1em auto; display:block;">
 </div>
 
+<div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
+  <a href="./Lab2.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab4.html" class="nav-btn">Next Lab →</a>
+</div>

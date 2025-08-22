@@ -70,8 +70,9 @@ The ground truth and the robot's belief were consistent over multiple runs. This
 
 ---
 
-<div style="display:flex; justify-content:space-between; margin-top:2em;">
-  <a href="./Lab9.html" style="padding:10px 16px; background:#157878; color:#fff; border-radius:6px; text-decoration:none;">⬅️ Prev Lab</a>
-  <a href="./Lab11.html" style="padding:10px 16px; background:#157878; color:#fff; border-radius:6px; text-decoration:none;">Next Lab ➡️</a>
+<div class="nav-buttons" style="display:flex; justify-content:space-between; gap:12px; margin-top:2em;">
+  <a href="./Lab9.html" class="nav-btn">← Prev Lab</a>
+  <a href="./Lab11.html" class="nav-btn">Next Lab →</a>
 </div>
+
 

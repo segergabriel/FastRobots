@@ -25,14 +25,14 @@ To determine the probability of the robot's new pose, it is necessary to compare
 </div>
 
 ### Odometry Motion 
-After determining the robot's actual movement, the likelihood of this movement was calculated using a **Gaussian distribution**.  
+After determining the robot's actual movement, the likelihood of this movement was calculated using a Gaussian distribution.  
 
 <div style="text-align:center;">
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/10odom.png?raw=true" alt="Odometry motion model" style="max-width:500px; width:100%; border-radius:8px; margin:1em auto; display:block;">
 </div>
 
 ### Prediction Step
-The calculated probabilities were then used to predict the robot's position. I implemented **six nested loops**, reflecting the algorithm's complexity in evaluating the probability that the robot moved to its current pose from each possible grid cell. The algorithm skips adding probabilities for any grid cell with a previous belief approximated as 0.0001 or lower to optimize processing. For all other cells, the code iteratively computes the likelihood of the robot's presence in each cell using the odometry probability model.
+The calculated probabilities were then used to predict the robot's position. I implemented 6 nested loops, reflecting the algorithm's complexity in evaluating the probability that the robot moved to its current pose from each possible grid cell. The algorithm skips adding probabilities for any grid cell with a previous belief approximated as 0.0001 or lower to optimize processing. For all other cells, the code iteratively computes the likelihood of the robot's presence in each cell using the odometry probability model.
 
 <div style="text-align:center;">
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/10pred.png?raw=true" alt="Prediction step implementation" style="max-width:500px; width:100%; border-radius:8px; margin:1em auto; display:block;">
@@ -46,7 +46,7 @@ This function is important for the **update step** because it computes the proba
 </div>
 
 ### Update Step
-In the update step, the robot computes the belief for each grid cell by multiplying the predicted belief by the probability derived from the sensor measurements. This product forms the updated belief for each grid cell. These beliefs are then **normalized** to ensure they together form a valid probability distribution.  
+In the update step, the robot computes the belief for each grid cell by multiplying the predicted belief by the probability derived from the sensor measurements. This product forms the updated belief for each grid cell. These beliefs are then normalized to ensure they together form a valid probability distribution.  
 
 <div style="text-align:center;">
   <img src="https://github.com/segergabriel/FastRobots/blob/main/images/10update.png?raw=true" alt="Update step" style="max-width:500px; width:100%; border-radius:8px; margin:1em auto; display:block;">
@@ -54,9 +54,9 @@ In the update step, the robot computes the belief for each grid cell by multiply
 
 ### Simulation
 The Bayes Filter was tested using the provided simulator, where:  
-- **Odometry data** is shown in red  
-- **Ground truth** in green  
-- **Robot’s estimated position** in blue  
+- Odometry data is shown in red  
+- Ground truth in green  
+- Robot’s estimated position in blue  
 
 The ground truth and the robot's belief were consistent over multiple runs. This indicates that the Bayes Filter is effectively localizing the robot within the simulated environment. Below is one screenshot of a run, followed by my final simulation video.  
 
